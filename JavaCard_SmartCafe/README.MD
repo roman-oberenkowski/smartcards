@@ -42,15 +42,41 @@ java -jar gp.jar --emv --install JCOpenPGP.jar --default
 
 Other OpenPGP implementations:
 - OpenPGP-Card https://github.com/FluffyKaon/OpenPGP-Card
-  - JavaCard 2.2.2 ("2.2.1 untested")
+  - JavaCard 2.2.2 ("2.2.1 untested") - `Applet loading failed. Are you sure the card can handle it?`
 - SmartPGP https://github.com/github-af/SmartPGP
-  - JavaCard 3.0.4
+  - JavaCard 3.0.4 - `Applet loading failed. Are you sure the card can handle it?`
 - https://sourceforge.net/projects/openpgp/files/
+
+### Other applets
+See [OpenSC JavaCards page](https://github.com/OpenSC/OpenSC/wiki/JavaCards)
+#### PIV
+- `PivApplet-0.9.0-jc221-RESLD.cap` works [Link](https://github.com/arekinath/PivApplet)
+- none of other 7 versions for JC221/JC222 worked.
+- use `opensc-tool -n` to validate correct PIV card
+#### GIDS
+https://github.com/vletoux/GidsApplet can be installed
+- `java -jar gp.jar --emv --install gids.cap --default`
+```
+gids-tool
+#-> [...] Is that a new card?
+# Now initialize the card:
+gids-tool -X -v 
+gids-tool
+#-> [...] Dumping the content of the card [...]
+```
+- test in Windows (source: [link](https://techcommunity.microsoft.com/t5/core-infrastructure-and-security/manually-importing-keys-into-a-smart-card/ba-p/1128396))
+```
+certutil -csplist
+certutil -scinfo
+
+certutil -csp "Microsoft Base Smart Card Crypto Provider" -importpfx .\exported.pfx
+
+certutil -scinfo
+```
 
 ## To test
 ### GIDS
 - https://github.com/JavaCardOS/GidsApp/tree/master
-- https://github.com/vletoux/GidsApplet
 
 ### NDEF
 - https://github.com/petrs/hotp_via_ndef

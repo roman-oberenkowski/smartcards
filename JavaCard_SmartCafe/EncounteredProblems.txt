@@ -1,0 +1,14 @@
+.\gp.exe --emv --install .\Applets\OpenPGP\Fluffypgp_cap_JC222\gpg.cap
+# ActivIdentity USB Reader V3 0
+Warning: no keys given, using default test key 404142434445464748494A4B4C4D4E4F
+[WARN] GPSession - GET STATUS failed for 80F21000024F0000 with 0x6A81 (Function not supported e.g. card Life Cycle State is CARD_LOCKED)
+Applet loading failed. Are you sure the card can handle it?
+LOAD failed: 0x6A80 (Wrong data/incorrect values in data)
+
+.\gp.exe --emv --install .\Applets\PIV\PivApplet-0.9.0-jc221-RESAaD.cap
+# ActivIdentity USB Reader V3 0
+Warning: no keys given, using default test key 404142434445464748494A4B4C4D4E4F
+[WARN] GPSession - GET STATUS failed for 80F21000024F0000 with 0x6A81 (Function not supported e.g. card Life Cycle State is CARD_LOCKED)
+CAP loaded
+[WARN] GPSession - GET STATUS failed for 80F21000024F0000 with 0x6A81 (Function not supported e.g. card Life Cycle State is CARD_LOCKED)
+INSTALL [for install and make selectable] failed: 0x6F00
