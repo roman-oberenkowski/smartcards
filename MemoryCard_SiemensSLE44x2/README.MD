@@ -12,9 +12,12 @@ Card doesn't work in most smartcard readers, bacause it uses ancient two-wire pr
 Using EasyReader v5.24.00; Reset=>CardMutes=>fail, Reset=>ATR=>OK
 - Omnikey 5x21 contact: OK
 - Omnikey 4040 PCMCIA: OK
+- Omnikey CardMan 3921: OK
+  - Note: requires Omnikey 3x21 drivers, doesn't work with the generic driver
 - ActivIdentity 3.0 USB: fail
 - HP ExpressCard SmartCard: fail
-- ActivIdentity PCMCIA: fail
+- ActivIdentity/SCM SCR243 PCMCIA: fail
+  - Note: it may be possible to interface with memory cards using SCM MCARD API (as mentioned in the reader's datasheet)
 - HP (LiteOn) keyboard with integrated SC reader: fail
 
 ## More ATR information

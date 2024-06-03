@@ -9,6 +9,8 @@
 - JavaCard version 2.2.1
 - GlobalPlatform version 2.1.1
 - JCAlgTest results: [link](https://github.com/crocs-muni/jcalgtest_results/blob/main/javacard/Profiles/results/G%2BD_Smart_Cafe_Expert_4.x_V2_ICFabDate_2007_079_ALGSUPPORT__3b_f8_18_00_00_80_31_fe_45_00_73_c8_40_13_00_90_00_92_(provided_by_PetrS).csv)
+- Some benchmarks: A comparison of Java Cards : state-of-affairs 2006 [Link](https://pure.tue.nl/ws/files/1889673/627238.pdf)
+  - B_221 seems to be this card
 
 ## Drivers/middleware
 - A.E.T Europe B.V. SafeSign: [Link](https://aeteurope.com/safesign/)

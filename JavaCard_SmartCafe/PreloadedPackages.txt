@@ -1,0 +1,27 @@
+.\gp.exe -l --emv
+# ActivIdentity USB Reader V3 0
+Warning: no keys given, using default test key 404142434445464748494A4B4C4D4E4F
+[WARN] GPSession - GET STATUS failed for 80F21000024F0000 with 0x6A81 (Function not supported e.g. card Life Cycle State is CARD_LOCKED)
+ISD: A000000003000000 (INITIALIZED)
+     Privs:   SecurityDomain, CardLock, CardTerminate, CardReset, CVMManagement
+
+PKG: A0000000035344 (LOADED)
+>>>> A000000003534441 = Schlumberger Security Domain
+>>>> Security domain?
+>>>> [?????SD]
+
+PKG: A0000000035350 (LOADED)
+>>>> A0000000035350 = OCS Oberthur Card System Security Domain Package AID / VGP Card Manager (for ISD and ASD)
+>>>> [?????SP]
+
+PKG: 534B544558544C4942 (LOADED)
+>>>> 53 4B 54 45 58 54 4C 49 42 => ?
+>>>> 534B544558544C4942  => ?
+>>>> [SKTEXTLIB]
+
+
+PKG: A000000227011000 (LOADED)
+>>>> [????’???]
+
+PKG: D276000005AA040360010410 (LOADED)
+>>>> Giesecke&Devrient - Germany - G D App Nokia 6212
