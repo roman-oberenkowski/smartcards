@@ -1,0 +1,35 @@
+gpalist_binaries> python run.py
+# ActivIdentity USB Reader V3 0
+Warning: no keys given, using default test key 404142434445464748494A4B4C4D4E4F
+ISD: A000000003000000 (SECURED)
+     Privs:   SecurityDomain, CardLock, CardTerminate, CardReset, CVMManagement
+
+APP: A0000000770103000610000000000002 (SELECTABLE (0xf))
+     RID info: A000000077, Vendor:  Oberthur Technologies /  France
+     AID info: unknown AID
+     Privs:   CardReset
+
+APP: A00000006203010C0101 (SELECTABLE)
+     RID info: A000000062, Vendor:  Sun Microsystems Inc. /  United States
+     AID info: unknown AID
+     Privs:
+
+PKG: A0000000035350 (LOADED)
+     RID info: A000000003, Vendor:  Visa International /  United States
+     AID info: Security Domain, OCS Oberthur Card System Security Domain Package AID / VGP Card Manager (for ISD and ASD), Vendor: Visa International / United States
+     Version: 2.3
+     Applet:  A0000001510000
+     Applet:  A000000003535041
+     Applet:  A0000000030000
+
+PKG: A0000000770100000710000000000004 (LOADED)
+     RID info: A000000077, Vendor:  Oberthur Technologies /  France
+     AID info: unknown AID
+     Version: 1.0
+     Applet:  A0000000770100000710000100000004
+
+PKG: A00000006203010C01 (LOADED)
+     RID info: A000000062, Vendor:  Sun Microsystems Inc. /  United States
+     AID info: unknown AID
+     Version: 1.0
+     Applet:  A00000006203010C0101

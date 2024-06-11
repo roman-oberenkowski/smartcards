@@ -54,26 +54,7 @@ See [OpenSC JavaCards page](https://github.com/OpenSC/OpenSC/wiki/JavaCards)
 - none of other 7 versions for JC221/JC222 worked.
 - use `opensc-tool -n` to validate correct PIV card
 #### GIDS
-https://github.com/vletoux/GidsApplet can be installed
-- `java -jar gp.jar --emv --install gids.cap --default`
-```
-gids-tool
-#-> [...] Is that a new card?
-# Now initialize the card:
-gids-tool -X -v 
-gids-tool
-#-> [...] Dumping the content of the card [...]
-```
-- test in Windows (source: [link](https://techcommunity.microsoft.com/t5/core-infrastructure-and-security/manually-importing-keys-into-a-smart-card/ba-p/1128396))
-```
-certutil -csplist
-certutil -scinfo
-
-certutil -csp "Microsoft Base Smart Card Crypto Provider" -importpfx .\exported.pfx
-
-certutil -scinfo
-```
-
+- https://github.com/vletoux/GidsApplet can be installed
 ## To test
 ### GIDS
 - https://github.com/JavaCardOS/GidsApp/tree/master
