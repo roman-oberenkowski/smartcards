@@ -1,0 +1,4 @@
+- `pkcs11-tool -M` to show supported mechanisms
+- `pksc11-tool --test` to show what is really supported on the card
+- `pkcs11-tool --sign --mechanism RSA-X-509` to sign data from stdin using RSA
+- `pkcs11-tool -L` to list objects (note the id and use when signing by specifying --id)

@@ -56,6 +56,11 @@ See [OpenSC JavaCards page](https://github.com/OpenSC/OpenSC/wiki/JavaCards)
 - use `opensc-tool -n` to validate correct PIV card
 #### GIDS
 - https://github.com/vletoux/GidsApplet can be installed
+
+### Multiple applets on the card
+- I installed first PGPCard and then PIV. Doing so in reverse caused not enough memory error.
+- You can remove almost all preinstalled applets. But remember to leave the A000000003000000 (ISD) alone. (unconfirmed) It will not probably free any space, because the PKGs are fused into EEPROM.
+
 ## To test
 ### GIDS
 - https://github.com/JavaCardOS/GidsApp/tree/master

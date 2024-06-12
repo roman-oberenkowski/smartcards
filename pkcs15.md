@@ -1,0 +1,1 @@
+- `pkcs15-tool --list-info` works for both GIDS and PIV

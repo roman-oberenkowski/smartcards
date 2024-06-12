@@ -17,6 +17,7 @@ This repo contains the notes and gathered information about smartcards. Intended
 - `pcsc_scan -r` to list readers
 - `systemctl stop pcdsd` and `pcscd -a --debug --foreground` to show all APDU commands being exchanged
 - `gscriptor` (from pcsc-tools) as it is quite similar to EasyReader
+- `opensc-tool -s "<APDU>"` to send specific APDU directly to the card
 
 ### Global Platform 
 If the card uses GlobalPlatform (more info [here](https://github.com/martinpaljak/GlobalPlatformPro/tree/master/docs/pdfs)) you can use [GlobalPlatformPro](https://github.com/martinpaljak/GlobalPlatformPro/) to get some technical info about the card
@@ -76,3 +77,17 @@ certutil -csp "Microsoft Base Smart Card Crypto Provider" -importpfx .\exported.
 
 certutil -scinfo
 ```
+
+## Windows detection quirks
+Microsoft and OpenSC loads the PIV applet before the GIDS applet. You cannot read the GIDS data if the PIV is installed on the same card.
+
+If the PIV applet has been installed on a card (and the card read by Windows) with the same ATR, Windows add a cache entry in the registry in the “Calais” key making the link with the applet type (PIV, GIDS) and the ATR. Delete this entry or change the ATR to allows its load. This entry exists on x64 at 2 places (normal and Wow64 node).
+- [source](https://www.mysmartlogon.com/generic-identity-device-specification-gids-smart-card/)
+- [Windows Smartcard discovery process](https://learn.microsoft.com/en-us/windows-hardware/drivers/smartcard/discovery-process)
+- Cannot use GPG or GIDS, because a card with the same ATR had PIV?
+    - go to device manager, uninstall the smartcard reader (NOT smartcard itself) -> problem solved
+- You can have a card that has both PGPCard and PIV. Set PGPCard applet as the default and both functions will work (no need to uninstall then). 
+
+## MISC
+### Install applet from the CAP already on the card
+- ` ./gp.exe --emv --create D2760001240102000000000000010000 --package D27600012400 --applet D2760001240102000000000000010000` (example for JOPenPGP)
