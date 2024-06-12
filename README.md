@@ -3,8 +3,21 @@ This repo contains the notes and gathered information about smartcards. Intended
 
 ## Identication of a smartcard
 ### Using ATR 
-- Find your card ATR for example using: [Smartcard Suite](https://sourceforge.net/projects/smartcardsuite/)
+- ATR = Answer to Reset
+- Find your card ATR for example using: 
+    - [Smartcard Explorer](https://sourceforge.net/projects/jsmartcard/)
+    - [Smartcard Suite](https://sourceforge.net/projects/smartcardsuite/)
+    - EasyReader
+    - [pcsc_scan.exe](https://pcsc-tools.apdu.fr/)
 - Use [atrParse](https://smartcard-atr.apdu.fr/) to try identify the card based on the aquired ATR.
+- Note: The ATR that you get using contactless interface (ATS - Answer to Select) will probably be different then ATR from contact interface. You may look up both.
+#### Linux
+- `opensc-tool -n` to print card type (if supported by OpenSC)
+- `pcsc_scan` (from pcsc-tools) to parse the ATR automatically
+- `pcsc_scan -r` to list readers
+- `systemctl stop pcdsd` and `pcscd -a --debug --foreground` to show all APDU commands being exchanged
+- `gscriptor` (from pcsc-tools) as it is quite similar to EasyReader
+
 ### Global Platform 
 If the card uses GlobalPlatform (more info [here](https://github.com/martinpaljak/GlobalPlatformPro/tree/master/docs/pdfs)) you can use [GlobalPlatformPro](https://github.com/martinpaljak/GlobalPlatformPro/) to get some technical info about the card
 - `gp.exe/java -jar gp.jar -i`

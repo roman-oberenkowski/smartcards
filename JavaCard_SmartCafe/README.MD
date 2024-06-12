@@ -1,6 +1,7 @@
 # SmartCafe/Sm@rtCafe 
 ## Info
-- Atr: 3B F8 18 00 00 80 31 FE 45 00 73 C8 40 13 00 90 00 92 
+- Atr (contact): 3B F8 18 00 00 80 31 FE 45 00 73 C8 40 13 00 90 00 92 
+- Ats (contactless): 3B 88 80 01 00 73 C8 40 13 00 90 00 71
 - G&D StarSign Token
 - Supports contact and contactless interface
 - NXP Tag info: SmartMX (P5CD072 or P5CT072) - G&D Sm@rtCafe 
