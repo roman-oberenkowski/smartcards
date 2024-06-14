@@ -48,6 +48,28 @@ To interpret the AIDs on the card you can use
 - https://learn.microsoft.com/en-us/windows/security/identity-protection/virtual-smart-cards/virtual-smart-card-tpmvscmgr
 - https://techcommunity.microsoft.com/t5/core-infrastructure-and-security/setting-up-tpm-protected-certificates-using-a-microsoft/ba-p/1129063
 
+## Misc
+- APDU shell in python
+    - https://github.com/grakic/apdu
+- yubikey usage from the [article](https://blog.ctis.me/2022/12/yubikey-piv-gpg/#why-have-multiple-certificate-authorities) - notes 
+    - Use PIV for
+        - access control (in buildings)
+        - login to OS (PKCS11 - pam_pkcs11)
+        - SSL Client Authentication
+        - SSH authentication
+        - EAP-TLS auth for RADIUS
+        - Unlocking bitlocker volumes ([link](https://nathanaelfrey.com/2021/01/09/setting-up-bitlocker-with-yubikey-as-smart-card/))
+    - PGP
+        - Signing, encrypting, and decrypting
+        - Signing Git commits
+        - Signing and encrypting emails
+        - Signing and encrypting files
+        - SSH authentication 
+    - U2F/FIDO2
+        - SSH authentication
+        - Full-Disk Encryption (FDE)
+
+
 ## Smartcard simulation
 - https://github.com/OpenSC/OpenSC/wiki/Smart-Card-Simulation
 
