@@ -36,6 +36,20 @@ To interpret the AIDs on the card you can use
 - Use GIDS to log-in to Windows
 - Pluggable authentication modules - use pam_p11 to authenticate using PKCS#11
 - (possible?) connect to eduroam using certificate on the smartcard
+- Unlocking KeePass with a SmartCard [link](https://zerowidthjoiner.net/2019/02/24/unlocking-keepass-with-a-smartcard-keepass-certificate-shortcut-provider)
+
+## OpenSC on Windows
+- https://github.com/OpenSC/OpenSC/wiki/Windows-Quick-Start
+
+## Sniff APDUs on windows
+- https://github.com/robbatt/wireshark_iso7816_apdu_dissector/tree/master
+
+## TPM virtual smartcards
+- https://learn.microsoft.com/en-us/windows/security/identity-protection/virtual-smart-cards/virtual-smart-card-tpmvscmgr
+- https://techcommunity.microsoft.com/t5/core-infrastructure-and-security/setting-up-tpm-protected-certificates-using-a-microsoft/ba-p/1129063
+
+## Smartcard simulation
+- https://github.com/OpenSC/OpenSC/wiki/Smart-Card-Simulation
 
 ## GIDS
 - Stands for Generic Identity Device Specification 
@@ -71,13 +85,27 @@ gids-tool.exe -X -v --pin 12345 --serial-number 00000000000000000000000000000001
 - test in Windows (source: [link](https://techcommunity.microsoft.com/t5/core-infrastructure-and-security/manually-importing-keys-into-a-smart-card/ba-p/1128396))
 ```
 certutil -csplist
+# Note: Entering a PIN is not required for this operation. You can press ESC if you are prompted for a PIN.
 certutil -scinfo
 
 certutil -csp "Microsoft Base Smart Card Crypto Provider" -importpfx .\exported.pfx
 
+To find the container value, type certutil.exe -scinfo.
+To delete a container, type certutil.exe -delkey -csp "Microsoft Base Smart Card Crypto Provider" "<ContainerValue>".
 certutil -scinfo
 ```
-
+- Some examples of what can be enabled using a GIDS smart card include:
+    - Smart card login to Windows
+    - TLS client authentication
+    - VPN authentication
+    - source: [link](https://www.microcosm.com/blog/generic-identity-device-specification-gids-smart-card-authentication)
+- to use GIDS smartcard for certificated for signing files using NTFS EFS
+    - type 'manage file encryption certificates' (or ControlPanel -> User Accounts -> Manage File Encryption Certificated - sidebar)
+    - select the certificate that is on your smartcard
+    - when trying to open encypted file, Windows should ask you for your pin (smartcard needs to be inserted when trying to open the file)
+        - you can also do `cipher /flushcache` to remove cached encryption keys
+    - trying to export the key (backup) will result in a `Encrypting File System` message `The certificate or key is not available for export on this machine. Error code: 8009000b`
+    - It will not ask for a pin again when opening encrypted file after `cipher /flushcache`. Only if you remove the smartcard and insert it again.
 ## Windows detection quirks
 Microsoft and OpenSC loads the PIV applet before the GIDS applet. You cannot read the GIDS data if the PIV is installed on the same card.
 
@@ -88,6 +116,9 @@ If the PIV applet has been installed on a card (and the card read by Windows) wi
     - go to device manager, uninstall the smartcard reader (NOT smartcard itself) -> problem solved
 - You can have a card that has both PGPCard and PIV. Set PGPCard applet as the default and both functions will work (no need to uninstall then). 
 
+- If you get `The smart card requires drivers that are not present on this system.` find your card name in `Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Cryptography\Calais\SmartCards\` and remove corresponding key
+    - restart smartcard services using `services.msc`
+    - it seems that it happens when middleware gets uninstalled, but leaves ATR assosiations behind. Maybe services restart is enough?
 ## MISC
 ### Install applet from the CAP already on the card
 - ` ./gp.exe --emv --create D2760001240102000000000000010000 --package D27600012400 --applet D2760001240102000000000000010000` (example for JOPenPGP)

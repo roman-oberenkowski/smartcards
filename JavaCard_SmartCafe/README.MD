@@ -2,7 +2,7 @@
 ## Info
 - Atr (contact): 3B F8 18 00 00 80 31 FE 45 00 73 C8 40 13 00 90 00 92 
 - Ats (contactless): 3B 88 80 01 00 73 C8 40 13 00 90 00 71
-- G&D StarSign Token
+- G&D StarSign Token ([link](https://www.gi-de.com/en/digital-security/identity-technology/enterprise-security/hardware-based-authentication))
 - Supports contact and contactless interface
 - NXP Tag info: SmartMX (P5CD072 or P5CT072) - G&D Sm@rtCafe 
 - Info from OpenSC: [link](https://github.com/OpenSC/OpenSC/wiki/StarSign-Token)
@@ -17,6 +17,7 @@
 - A.E.T Europe B.V. SafeSign: [Link](https://aeteurope.com/safesign/)
 - SafeSign identity client for ArchLinux: [Link](https://aur.archlinux.org/packages/safesignidentityclient?O=20)
 - Drivers for Windows/Ubuntu: [Link](https://safesign.gdamericadosul.com.br/download)
+- Drivers for Windows (alternative source): [link](https://safeweb.com.br/suporte/centraldedownloads/cartao)
 - PKCS#11 for those cards is provided via 'The SafeSign IC PKCS #11 Library' - called ‘libaetpkss.so’ - can be found in: /usr/lib/
 - cards have default transport keys diversified using emv (use --emv in GlobalPlatformPro).
 ## Setup
@@ -68,3 +69,22 @@ See [OpenSC JavaCards page](https://github.com/OpenSC/OpenSC/wiki/JavaCards)
 ### NDEF
 - https://github.com/petrs/hotp_via_ndef
 - https://github.com/OpenJavaCard/openjavacard-ndef
+
+## Personalization/initialization
+Currently there is no known way to personalize/initialize the card based on publicly available knowledge.
+- SafeSign IC on JCOP 4: [link](https://www.tuv-nederland.nl/assets/files/cerfiticaten/2021/05/nscib-cc-0274076-st.pdf)
+  - 1.3.5 TOE Delivery
+  - 1.3.4 TOE Life Cycle
+```
+In case the applet is pre-loaded, the delivery consists of a binary archive containing:
+- A container file containing the following elements:
+  - The SafeSign IC PKI Applet v3 Interface Specification [FSP].
+  - The test report of the applet.
+  - An information file containing:
+    - The used configuration.
+    - The unique identifier of the toolchain versions.
+    - The fingerprint of the used revision from all version control repositories.
+    - The unique identifier of the applet.
+  - The preparative procedures document [PRE].
+- The operational guidance document [OPE].
+```
