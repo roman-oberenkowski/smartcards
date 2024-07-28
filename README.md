@@ -9,6 +9,7 @@ This repo contains the notes and gathered information about smartcards. Intended
     - [Smartcard Suite](https://sourceforge.net/projects/smartcardsuite/)
     - EasyReader
     - [pcsc_scan.exe](https://pcsc-tools.apdu.fr/)
+    - PyApduTool
 - Use [atrParse](https://smartcard-atr.apdu.fr/) to try identify the card based on the aquired ATR.
 - Note: The ATR that you get using contactless interface (ATS - Answer to Select) will probably be different then ATR from contact interface. You may look up both.
 #### Linux

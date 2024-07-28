@@ -5,6 +5,7 @@
 - G&D StarSign Token ([link](https://www.gi-de.com/en/digital-security/identity-technology/enterprise-security/hardware-based-authentication))
 - Supports contact and contactless interface
 - NXP Tag info: SmartMX (P5CD072 or P5CT072) - G&D Sm@rtCafe 
+- Chip Operating System G&D Sm@rtCafe Expert 3.1
 - Info from OpenSC: [link](https://github.com/OpenSC/OpenSC/wiki/StarSign-Token)
 - After driver installation - Windows reports it as "SafeSign IC's read-write minidriver for G&D Sm@rtCafe Expert 4.0"
 - JavaCard version 2.2.1
