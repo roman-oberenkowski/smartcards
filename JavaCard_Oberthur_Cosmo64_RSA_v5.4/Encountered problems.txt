@@ -1,0 +1,4 @@
+gp -applet D2760000850101 -params 100BD101075402656E54657374 -install prebuilt/openjavacard-ndef-tiny-plain.cap
+Warning: no keys given, using default test key 404142434445464748494A4B4C4D4E4F
+Applet loading not allowed. Are you sure the domain can accept it?
+LOAD failed: 0x6985 (Conditions of use not satisfied)
