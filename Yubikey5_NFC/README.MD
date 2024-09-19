@@ -30,6 +30,7 @@ It means, that its usb configuration can include 'smartcard reader'-like interfa
 - To make PIV smartcard writeable, you need the YubiKey Minidriver from https://www.yubico.com/support/download/smart-card-drivers-tools/
 - Later (replug the device), you may use the following command:
 `certutil -csp "Microsoft Base Smart Card Crypto Provider" -importpfx ./certificateWithPrivateKey.p12`
+- Using above method, the Secuirty key will not enable the human presence detection (capacitive button)
 For more details see dedicated PIV or OpenPGP sections.
 
 ## OTP, OATH

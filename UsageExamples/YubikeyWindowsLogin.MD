@@ -6,5 +6,5 @@ YubikeyWindowsLogin
 - Uses the OTP (One Time Password) interface on the Yubikey. It needs to be enabled thru YubikeyManager/ykman 
 - Using the factory preprogrammed secret (slot 1) didn't work for me. Had to populate the slot 2.
 - Doesn't require to join the Domain
-
+- Didn't work using NFC - "Please insert your Yubikey and try again" (with Omnikey 5421 Contactless reader; Kleopatra was able to read PIV/PGP info)
 
