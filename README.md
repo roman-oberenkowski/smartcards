@@ -1,6 +1,17 @@
-# smartcards
-This repo contains the notes and gathered information about smartcards. Intended to organize the knowledge and give a quick-start for newcommers using selected smartcards.
+# Smartcards (+ other security devices)
+Note: Work in progress... 
 
+My notes and gathered information about smartcards and other security devices connected with smartcard uses. 
+Intended to organize the knowledge and give a quick-start for newcommers using selected smartcards/mechanisms.
+Other devices include things like TPM (that can be used like a smartcard using some popular solutions) or security keys (like Yubikey 5) that contain PIV/PGP features.
+My goal it to include at least the following information:
+- Specifications of the cards I worked with
+- List of supported applets for a quick-start
+- Short descriptions/guides concerning use-cases with commands for copy/paste
+- Some technical terms necessary to understand the topic
+- My experiences - like a note of something not working or requiring a particular parameter
+- notes for both - Linux and Windows
+  
 ## Identication of a smartcard
 ### Using ATR 
 - ATR = Answer to Reset
