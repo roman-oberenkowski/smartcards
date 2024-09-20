@@ -1,0 +1,2 @@
+- https://svrooij.io/2024/01/01/secure-ssh-windows-hello/
+- modified version of Putty to use such ssh-key (Windows CAPI) https://github.com/NoMoreFood/putty-cac

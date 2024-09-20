@@ -101,3 +101,11 @@ If the PIV applet has been installed on a card (and the card read by Windows) wi
 ## MISC
 ### Install applet from the CAP already on the card
 - ` ./gp.exe --emv --create D2760001240102000000000000010000 --package D27600012400 --applet D2760001240102000000000000010000` (example for JOPenPGP)
+- Smartcard tools https://www.idrix.fr/Root/content/section/7/46/
+- NFC FIDO Windows (Surface) https://learn.microsoft.com/en-us/surface/surface-pro-nfc
+- `ssh-keygen -K` to generate resident keyfiles from the security key to the filesystem (new device)
+- https://developers.yubico.com/SSH/Securing_git_with_SSH_and_FIDO2.html
+- https://learn.microsoft.com/en-us/entra/identity/authentication/concept-fido2-compatibility
+- https://learn.microsoft.com/pl-pl/entra/identity/authentication/how-to-register-passkey-authenticator?tabs=iOS
+- good passkey demo test website (reset every 24h) https://passkey.org/
+- https://www.idmanagement.gov/implement/scl-ssh/

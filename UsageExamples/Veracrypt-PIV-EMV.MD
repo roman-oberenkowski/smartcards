@@ -1,0 +1,2 @@
+- EMV https://veracrypt.eu/en/EMV%20Smart%20Cards.html
+- PIV https://veracrypt.eu/en/Keyfiles%20in%20VeraCrypt.html
