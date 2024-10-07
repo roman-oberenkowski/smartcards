@@ -46,3 +46,14 @@ Works out of the box, PIN-pad works.
 ## HP (Liteon) keyboard with integrated smartcard reader (SK-2027)
 - 03f0:164a HP, Inc HP SC Keyboard - Apollo (Liteon)
 - Numpad can also be used as a PIN-pad.
+## Dell SK-3205
+- See the user pdf guide at https://dl.dell.com/content/manual11566745-dell-keyboard-smartcard-usb-kb813-user-guide.pdf?language=en-us
+  - "Amber ON - Secure PIN Entry procedure: this is the safe moment to enter your PIN code"
+  - when the smartcard light turns orange, all number keys will be visible to the OS as star characters '*'. 
+- test using OpenSC `pkcs11-tool --login --test` - it shouldn't ask for a PIN, but make the kb light amber
+  - or add opensc-pkcs11 module to Firefox and try logging onto a supported site
+
+### Win10
+- Download and install drivers from: https://www.dell.com/support/home/pl-pl/product-support/product/dell-smrt-kybrd-kb813/drivers
+  - Without drivers, the reader works, but the PIN-input is not available
+  - The drivers are for a newer keyboard model, but they work perfectly
