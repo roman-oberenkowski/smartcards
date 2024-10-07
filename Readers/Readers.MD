@@ -49,7 +49,7 @@ Works out of the box, PIN-pad works.
 ## Dell SK-3205
 - See the user pdf guide at https://dl.dell.com/content/manual11566745-dell-keyboard-smartcard-usb-kb813-user-guide.pdf?language=en-us
   - "Amber ON - Secure PIN Entry procedure: this is the safe moment to enter your PIN code"
-  - when the smartcard light turns orange, all number keys will be visible to the OS as star characters '*'. 
+  - when the smartcard light turns orange, all number keys will be visible to the OS as star characters '*'. Use enter to confirm, escape to cancel
 - test using OpenSC `pkcs11-tool --login --test` - it shouldn't ask for a PIN, but make the kb light amber
   - or add opensc-pkcs11 module to Firefox and try logging onto a supported site
 
