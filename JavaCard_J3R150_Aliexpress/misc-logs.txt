@@ -1,0 +1,925 @@
+PS C:\Users\Null\Downloads\SAI> gp -l
+Get-ItemProperty : Missing an argument for parameter 'LiteralPath'. Specify a parameter of type 'System.String[]' and
+try again.
+At line:1 char:4
++ gp -l
++    ~~
+    + CategoryInfo          : InvalidArgument: (:) [Get-ItemProperty], ParameterBindingException
+    + FullyQualifiedErrorId : MissingArgument,Microsoft.PowerShell.Commands.GetItemPropertyCommand
+
+PS C:\Users\Null\Downloads\SAI> cmd
+Microsoft Windows [Version 10.0.19045.4780]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\Null\Downloads\SAI>gp -l
+# OMNIKEY CardMan 5x21 0
+Warning: no keys given, using default test key 404142434445464748494A4B4C4D4E4F
+[WARN] GPSession - GET STATUS failed for 80F21000024F0000 with 0x6A81 (Function not supported e.g. card Life Cycle State is CARD_LOCKED)
+ISD: A000000003000000 (INITIALIZED)
+     Privs:   SecurityDomain, CardLock, CardTerminate, CardReset, CVMManagement
+
+PKG: A0000000035344 (LOADED)
+
+PKG: A0000000035350 (LOADED)
+
+PKG: 534B544558544C4942 (LOADED)
+
+PKG: A000000227011000 (LOADED)
+
+PKG: D276000005AA040360010410 (LOADED)
+
+# OMNIKEY CardMan 5x21-CL 0
+Failed to communicate with card in JnaCardTerminal{scardHandle=SCardContext{cd00000100000001}, name=OMNIKEY CardMan 5x21-CL 0}: Transmit failed: SCardTransmit got response 0x1f (null: null)
+PC/SC failure: SCARD_W_REMOVED_CARD
+
+C:\Users\Null\Downloads\SAI>gp -l
+Warning: no keys given, using default test key 404142434445464748494A4B4C4D4E4F
+[WARN] GPSession - GET STATUS failed for 80F21000024F0000 with 0x6A81 (Function not supported e.g. card Life Cycle State is CARD_LOCKED)
+ISD: A000000003000000 (INITIALIZED)
+     Privs:   SecurityDomain, CardLock, CardTerminate, CardReset, CVMManagement
+
+PKG: A0000000035344 (LOADED)
+
+PKG: A0000000035350 (LOADED)
+
+PKG: 534B544558544C4942 (LOADED)
+
+PKG: A000000227011000 (LOADED)
+
+PKG: D276000005AA040360010410 (LOADED)
+
+
+C:\Users\Null\Downloads\SAI>gp --install Prez_SAI_ESC_DESFIRE.odp
+
+C:\Users\Null\Downloads\SAI>cd Applets
+
+C:\Users\Null\Downloads\SAI\Applets>cd PIV
+
+C:\Users\Null\Downloads\SAI\Applets\PIV>../../gp.exe
+'..' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\Users\Null\Downloads\SAI\Applets\PIV>cd ..
+
+C:\Users\Null\Downloads\SAI\Applets>cd ..
+
+C:\Users\Null\Downloads\SAI>gp.exe --install Applets\PIV\PivApplet-0.9.0-jc221-RESLD.cap
+# OMNIKEY CardMan 5x21 0
+Warning: no keys given, using default test key 404142434445464748494A4B4C4D4E4F
+[WARN] GPSession - GET STATUS failed for 80F21000024F0000 with 0x6A81 (Function not supported e.g. card Life Cycle State is CARD_LOCKED)
+CAP loaded
+[WARN] GPSession - GET STATUS failed for 80F21000024F0000 with 0x6A81 (Function not supported e.g. card Life Cycle State is CARD_LOCKED)
+# OMNIKEY CardMan 5x21-CL 0
+Could not connect to OMNIKEY CardMan 5x21-CL 0: Card not present.
+
+C:\Users\Null\Downloads\SAI>gp.exe --install Applets\PIV\PivApplet-0.9.0-jc221-RESLD.cap
+# OMNIKEY CardMan 5x21 0
+Could not connect to OMNIKEY CardMan 5x21 0: SCARD_W_REMOVED_CARD
+# OMNIKEY CardMan 5x21-CL 0
+Could not connect to OMNIKEY CardMan 5x21-CL 0: Card not present.
+
+C:\Users\Null\Downloads\SAI>gp -l
+Warning: no keys given, using default test key 404142434445464748494A4B4C4D4E4F
+[WARN] GPSession - GET STATUS failed for 80F21000024F0000 with 0x6A81 (Function not supported e.g. card Life Cycle State is CARD_LOCKED)
+ISD: A000000003000000 (INITIALIZED)
+     Privs:   SecurityDomain, CardLock, CardTerminate, CardReset, CVMManagement
+
+APP: A000000308000010000100 (SELECTABLE)
+     Privs:
+
+PKG: A0000000035344 (LOADED)
+
+PKG: A0000000035350 (LOADED)
+
+PKG: 534B544558544C4942 (LOADED)
+
+PKG: A000000227011000 (LOADED)
+
+PKG: D276000005AA040360010410 (LOADED)
+
+PKG: A000000308000010 (LOADED)
+
+
+C:\Users\Null\Downloads\SAI>gp --hwlp
+hwlp is not a recognized option
+
+Option                             Description
+------                             -----------
+-?, -h, --help                     Shows this help
+-V, --version                      Show information about the program
+-a, --apdu <String: APDU>          Send raw APDU (hex)
+--acr-add                          Add an access rule
+--acr-aid <String: AID>            ARA-C applet AID
+--acr-delete                       Delete an access rule
+--acr-hash <String: SHA1>          Certificate hash
+--acr-list                         List access rules
+--acr-list-aram                    List access rules from ARA-M
+--acr-rule <String>                Access control rule (can be 0x00(NEVER),0x01
+                                     (ALWAYS) or an APDU filter
+--allow-from                       Allow moving from created SSD
+--allow-to                         Allow moving to created SSD
+--applet <String: AID>             Applet AID
+--bs <Integer: bytes>              maximum APDU payload size
+--cap <File>                       Use a CAP file as source
+--create <String: AID>             Create new instance of an applet
+-d, --debug                        Show PC/SC and APDU trace
+--dap-domain <String: AID>         Domain to use for DAP verification
+--default                          Indicate Default Selected privilege
+--delete [String: AID]             Delete applet/package
+--delete-key <String>              Delete key with version
+--domain <String: AID>             Create supplementary security domain
+--dump <File>                      Dump APDU communication to <File>
+--emv                              Use EMV KDF
+-f, --force                        Force operation
+-i, --info                         Show information
+--initialize-card                  Transition ISD to INITIALIZED state
+--install [File]                   Install applet(s) from CAP
+--kcv <String: KCV>                Specify master key check value
+--kdf <String: kdf>                Use KDF with master key
+--kdf3                             Use SCP03 KDF KDF
+--key <String: key>                Specify master key
+--key-dek <String: key>            Specify card DEK key
+--key-enc <String: key>            Specify card ENC key
+--key-id <String>                  Specify key ID
+--key-mac <String: key>            Specify card MAC key
+--key-ver <String>                 Specify key version
+-l, --list                         List the contents of the card
+--list-privs                       List known privileges
+--load <File>                      Load a CAP file
+--lock <String: key>               Set new key
+--lock-applet <String: AID>        Lock applet
+--lock-card                        Lock card
+--lock-dek <String: key>           Set new DEK key
+--lock-enc <String: key>           Set new ENC key
+--lock-kdf <String: kdf>           Use KDF with lock key
+--lock-mac <String: key>           Set new MAC key
+--make-default <String: AID>       Make AID the default
+--mode <String: mac/enc/clr>       Secure channel to use (mac/enc/clr)
+--move <String: AID>               Move something
+--new-keyver <String>              Key version for the new key
+--op201                            Enable OpenPlatform 2.0.1 mode
+--package, --pkg <String: AID>     Package AID
+--params <String: HEX>             Installation parameters
+--privs <String>                   Specify privileges for installation
+--put-key <String: PEM file>       Put a new key
+-r, --reader <String>              Use specific reader
+--rename-isd <String: new AID>     Rename ISD
+--replay <File>                    Replay APDU responses from <File>
+-s, --secure-apdu <String: APDU>   Send raw APDU (hex) via SCP
+--sdaid <String: AID>              ISD AID
+--secure-card                      Transition ISD to SECURED state
+--set-perso <String: data>         Set Perso data in CPLC
+--set-pre-perso <String: data>     Set PrePerso data in CPLC
+--sha256                           Use SHA-256 for LFDB hash
+--store-data <String: data>        STORE DATA blob
+--store-data-chunk <String: data>  Send STORE DATA commands
+--terminals <String>               Use PC/SC provider from <jar:class>
+--terminate                        Indicate Card Lock+Terminate privilege
+--to <String: AID>                 Destination security domain
+--today                            Set date to today when updating CPLC
+--token-key <String: path>         Path to private key used in Delegated
+                                     Management token generation
+--uninstall <File>                 Uninstall applet/package
+--unlock                           Set default key for card key
+--unlock-applet <String: AID>      Unlock applet
+--unlock-card                      Unlock card
+-v, --verbose                      Be verbose about operations
+--visa2                            Use VISA2 KDF
+
+C:\Users\Null\Downloads\SAI>gp --help
+Option                             Description
+------                             -----------
+-?, -h, --help                     Shows this help
+-V, --version                      Show information about the program
+-a, --apdu <String: APDU>          Send raw APDU (hex)
+--acr-add                          Add an access rule
+--acr-aid <String: AID>            ARA-C applet AID
+--acr-delete                       Delete an access rule
+--acr-hash <String: SHA1>          Certificate hash
+--acr-list                         List access rules
+--acr-list-aram                    List access rules from ARA-M
+--acr-rule <String>                Access control rule (can be 0x00(NEVER),0x01
+                                     (ALWAYS) or an APDU filter
+--allow-from                       Allow moving from created SSD
+--allow-to                         Allow moving to created SSD
+--applet <String: AID>             Applet AID
+--bs <Integer: bytes>              maximum APDU payload size
+--cap <File>                       Use a CAP file as source
+--create <String: AID>             Create new instance of an applet
+-d, --debug                        Show PC/SC and APDU trace
+--dap-domain <String: AID>         Domain to use for DAP verification
+--default                          Indicate Default Selected privilege
+--delete [String: AID]             Delete applet/package
+--delete-key <String>              Delete key with version
+--domain <String: AID>             Create supplementary security domain
+--dump <File>                      Dump APDU communication to <File>
+--emv                              Use EMV KDF
+-f, --force                        Force operation
+-i, --info                         Show information
+--initialize-card                  Transition ISD to INITIALIZED state
+--install [File]                   Install applet(s) from CAP
+--kcv <String: KCV>                Specify master key check value
+--kdf <String: kdf>                Use KDF with master key
+--kdf3                             Use SCP03 KDF KDF
+--key <String: key>                Specify master key
+--key-dek <String: key>            Specify card DEK key
+--key-enc <String: key>            Specify card ENC key
+--key-id <String>                  Specify key ID
+--key-mac <String: key>            Specify card MAC key
+--key-ver <String>                 Specify key version
+-l, --list                         List the contents of the card
+--list-privs                       List known privileges
+--load <File>                      Load a CAP file
+--lock <String: key>               Set new key
+--lock-applet <String: AID>        Lock applet
+--lock-card                        Lock card
+--lock-dek <String: key>           Set new DEK key
+--lock-enc <String: key>           Set new ENC key
+--lock-kdf <String: kdf>           Use KDF with lock key
+--lock-mac <String: key>           Set new MAC key
+--make-default <String: AID>       Make AID the default
+--mode <String: mac/enc/clr>       Secure channel to use (mac/enc/clr)
+--move <String: AID>               Move something
+--new-keyver <String>              Key version for the new key
+--op201                            Enable OpenPlatform 2.0.1 mode
+--package, --pkg <String: AID>     Package AID
+--params <String: HEX>             Installation parameters
+--privs <String>                   Specify privileges for installation
+--put-key <String: PEM file>       Put a new key
+-r, --reader <String>              Use specific reader
+--rename-isd <String: new AID>     Rename ISD
+--replay <File>                    Replay APDU responses from <File>
+-s, --secure-apdu <String: APDU>   Send raw APDU (hex) via SCP
+--sdaid <String: AID>              ISD AID
+--secure-card                      Transition ISD to SECURED state
+--set-perso <String: data>         Set Perso data in CPLC
+--set-pre-perso <String: data>     Set PrePerso data in CPLC
+--sha256                           Use SHA-256 for LFDB hash
+--store-data <String: data>        STORE DATA blob
+--store-data-chunk <String: data>  Send STORE DATA commands
+--terminals <String>               Use PC/SC provider from <jar:class>
+--terminate                        Indicate Card Lock+Terminate privilege
+--to <String: AID>                 Destination security domain
+--today                            Set date to today when updating CPLC
+--token-key <String: path>         Path to private key used in Delegated
+                                     Management token generation
+--uninstall <File>                 Uninstall applet/package
+--unlock                           Set default key for card key
+--unlock-applet <String: AID>      Unlock applet
+--unlock-card                      Unlock card
+-v, --verbose                      Be verbose about operations
+--visa2                            Use VISA2 KDF
+
+C:\Users\Null\Downloads\SAI>gp -l
+# OMNIKEY CardMan 5x21 0
+Warning: no keys given, using default test key 404142434445464748494A4B4C4D4E4F
+[WARN] GPSession - GET STATUS failed for 80F21000024F0000 with 0x6A81 (Function not supported e.g. card Life Cycle State is CARD_LOCKED)
+ISD: A000000003000000 (INITIALIZED)
+     Privs:   SecurityDomain, CardLock, CardTerminate, CardReset, CVMManagement
+
+APP: A000000308000010000100 (SELECTABLE)
+     Privs:
+
+PKG: A0000000035344 (LOADED)
+
+PKG: A0000000035350 (LOADED)
+
+PKG: 534B544558544C4942 (LOADED)
+
+PKG: A000000227011000 (LOADED)
+
+PKG: D276000005AA040360010410 (LOADED)
+
+PKG: A000000308000010 (LOADED)
+
+# OMNIKEY CardMan 5x21-CL 0
+Failed to communicate with card in JnaCardTerminal{scardHandle=SCardContext{cd00000100000001}, name=OMNIKEY CardMan 5x21-CL 0}: Transmit failed: SCardTransmit got response 0x1f (null: null)
+PC/SC failure: SCARD_W_REMOVED_CARD
+
+C:\Users\Null\Downloads\SAI>gp --uninstall A000000308000010000100
+No smart card readers with a card found
+
+C:\Users\Null\Downloads\SAI>gp --uninstall A000000308000010000100
+Warning: no keys given, using default test key 404142434445464748494A4B4C4D4E4F
+Could not read CAP: A000000308000010000100 (The system cannot find the file specified)
+
+C:\Users\Null\Downloads\SAI>gp --uninstall A000000308000010000100
+
+C:\Users\Null\Downloads\SAI>gp -l
+# OMNIKEY CardMan 5x21 0
+Warning: no keys given, using default test key 404142434445464748494A4B4C4D4E4F
+[WARN] GPSession - GET STATUS failed for 80F21000024F0000 with 0x6A81 (Function not supported e.g. card Life Cycle State is CARD_LOCKED)
+ISD: A000000003000000 (INITIALIZED)
+     Privs:   SecurityDomain, CardLock, CardTerminate, CardReset, CVMManagement
+
+APP: A000000308000010000100 (SELECTABLE)
+     Privs:
+
+PKG: A0000000035344 (LOADED)
+
+PKG: A0000000035350 (LOADED)
+
+PKG: 534B544558544C4942 (LOADED)
+
+PKG: A000000227011000 (LOADED)
+
+PKG: D276000005AA040360010410 (LOADED)
+
+PKG: A000000308000010 (LOADED)
+
+# OMNIKEY CardMan 5x21-CL 0
+Failed to communicate with card in JnaCardTerminal{scardHandle=SCardContext{cd00000100000001}, name=OMNIKEY CardMan 5x21-CL 0}: Transmit failed: SCardTransmit got response 0x1f (null: null)
+PC/SC failure: SCARD_W_REMOVED_CARD
+
+C:\Users\Null\Downloads\SAI>gp -l
+Warning: no keys given, using default test key 404142434445464748494A4B4C4D4E4F
+[WARN] GPSession - GET STATUS failed for 80F21000024F0000 with 0x6A81 (Function not supported e.g. card Life Cycle State is CARD_LOCKED)
+ISD: A000000003000000 (INITIALIZED)
+     Privs:   SecurityDomain, CardLock, CardTerminate, CardReset, CVMManagement
+
+APP: A000000308000010000100 (SELECTABLE)
+     Privs:
+
+PKG: A0000000035344 (LOADED)
+
+PKG: A0000000035350 (LOADED)
+
+PKG: 534B544558544C4942 (LOADED)
+
+PKG: A000000227011000 (LOADED)
+
+PKG: D276000005AA040360010410 (LOADED)
+
+PKG: A000000308000010 (LOADED)
+
+
+C:\Users\Null\Downloads\SAI>gp --uninstall A000000308000010000100
+Warning: no keys given, using default test key 404142434445464748494A4B4C4D4E4F
+Could not read CAP: A000000308000010000100 (The system cannot find the file specified)
+
+C:\Users\Null\Downloads\SAI>gp --delete A000000308000010000100
+Warning: no keys given, using default test key 404142434445464748494A4B4C4D4E4F
+[WARN] GPSession - GET STATUS failed for 80F21000024F0000 with 0x6A81 (Function not supported e.g. card Life Cycle State is CARD_LOCKED)
+
+C:\Users\Null\Downloads\SAI>gp --delete A000000308000010
+Warning: no keys given, using default test key 404142434445464748494A4B4C4D4E4F
+[WARN] GPSession - GET STATUS failed for 80F21000024F0000 with 0x6A81 (Function not supported e.g. card Life Cycle State is CARD_LOCKED)
+
+C:\Users\Null\Downloads\SAI>gp -l
+Warning: no keys given, using default test key 404142434445464748494A4B4C4D4E4F
+[WARN] GPSession - GET STATUS failed for 80F21000024F0000 with 0x6A81 (Function not supported e.g. card Life Cycle State is CARD_LOCKED)
+ISD: A000000003000000 (INITIALIZED)
+     Privs:   SecurityDomain, CardLock, CardTerminate, CardReset, CVMManagement
+
+PKG: A0000000035344 (LOADED)
+
+PKG: A0000000035350 (LOADED)
+
+PKG: 534B544558544C4942 (LOADED)
+
+PKG: A000000227011000 (LOADED)
+
+PKG: D276000005AA040360010410 (LOADED)
+
+
+C:\Users\Null\Downloads\SAI>gp.exe --install Applets\PIV\PivApplet-0.9.0-jc221-RESLD.cap
+Warning: no keys given, using default test key 404142434445464748494A4B4C4D4E4F
+[WARN] GPSession - GET STATUS failed for 80F21000024F0000 with 0x6A81 (Function not supported e.g. card Life Cycle State is CARD_LOCKED)
+CAP loaded
+[WARN] GPSession - GET STATUS failed for 80F21000024F0000 with 0x6A81 (Function not supported e.g. card Life Cycle State is CARD_LOCKED)
+
+C:\Users\Null\Downloads\SAI>gp
+Option                             Description
+------                             -----------
+-?, -h, --help                     Shows this help
+-V, --version                      Show information about the program
+-a, --apdu <String: APDU>          Send raw APDU (hex)
+--acr-add                          Add an access rule
+--acr-aid <String: AID>            ARA-C applet AID
+--acr-delete                       Delete an access rule
+--acr-hash <String: SHA1>          Certificate hash
+--acr-list                         List access rules
+--acr-list-aram                    List access rules from ARA-M
+--acr-rule <String>                Access control rule (can be 0x00(NEVER),0x01
+                                     (ALWAYS) or an APDU filter
+--allow-from                       Allow moving from created SSD
+--allow-to                         Allow moving to created SSD
+--applet <String: AID>             Applet AID
+--bs <Integer: bytes>              maximum APDU payload size
+--cap <File>                       Use a CAP file as source
+--create <String: AID>             Create new instance of an applet
+-d, --debug                        Show PC/SC and APDU trace
+--dap-domain <String: AID>         Domain to use for DAP verification
+--default                          Indicate Default Selected privilege
+--delete [String: AID]             Delete applet/package
+--delete-key <String>              Delete key with version
+--domain <String: AID>             Create supplementary security domain
+--dump <File>                      Dump APDU communication to <File>
+--emv                              Use EMV KDF
+-f, --force                        Force operation
+-i, --info                         Show information
+--initialize-card                  Transition ISD to INITIALIZED state
+--install [File]                   Install applet(s) from CAP
+--kcv <String: KCV>                Specify master key check value
+--kdf <String: kdf>                Use KDF with master key
+--kdf3                             Use SCP03 KDF KDF
+--key <String: key>                Specify master key
+--key-dek <String: key>            Specify card DEK key
+--key-enc <String: key>            Specify card ENC key
+--key-id <String>                  Specify key ID
+--key-mac <String: key>            Specify card MAC key
+--key-ver <String>                 Specify key version
+-l, --list                         List the contents of the card
+--list-privs                       List known privileges
+--load <File>                      Load a CAP file
+--lock <String: key>               Set new key
+--lock-applet <String: AID>        Lock applet
+--lock-card                        Lock card
+--lock-dek <String: key>           Set new DEK key
+--lock-enc <String: key>           Set new ENC key
+--lock-kdf <String: kdf>           Use KDF with lock key
+--lock-mac <String: key>           Set new MAC key
+--make-default <String: AID>       Make AID the default
+--mode <String: mac/enc/clr>       Secure channel to use (mac/enc/clr)
+--move <String: AID>               Move something
+--new-keyver <String>              Key version for the new key
+--op201                            Enable OpenPlatform 2.0.1 mode
+--package, --pkg <String: AID>     Package AID
+--params <String: HEX>             Installation parameters
+--privs <String>                   Specify privileges for installation
+--put-key <String: PEM file>       Put a new key
+-r, --reader <String>              Use specific reader
+--rename-isd <String: new AID>     Rename ISD
+--replay <File>                    Replay APDU responses from <File>
+-s, --secure-apdu <String: APDU>   Send raw APDU (hex) via SCP
+--sdaid <String: AID>              ISD AID
+--secure-card                      Transition ISD to SECURED state
+--set-perso <String: data>         Set Perso data in CPLC
+--set-pre-perso <String: data>     Set PrePerso data in CPLC
+--sha256                           Use SHA-256 for LFDB hash
+--store-data <String: data>        STORE DATA blob
+--store-data-chunk <String: data>  Send STORE DATA commands
+--terminals <String>               Use PC/SC provider from <jar:class>
+--terminate                        Indicate Card Lock+Terminate privilege
+--to <String: AID>                 Destination security domain
+--today                            Set date to today when updating CPLC
+--token-key <String: path>         Path to private key used in Delegated
+                                     Management token generation
+--uninstall <File>                 Uninstall applet/package
+--unlock                           Set default key for card key
+--unlock-applet <String: AID>      Unlock applet
+--unlock-card                      Unlock card
+-v, --verbose                      Be verbose about operations
+--visa2                            Use VISA2 KDF
+
+C:\Users\Null\Downloads\SAI>gp --key-enc 90379A3E7116D455E55F9398736A01CA --key-mac 473F36161A7F7F60CC3A766EA4BE5247 -l
+# OMNIKEY CardMan 5x21 0
+Warning: no keys given, using default test key 404142434445464748494A4B4C4D4E4F
+Read more from https://github.com/martinpaljak/GlobalPlatformPro/wiki/Keys
+STRICT WARNING: Card cryptogram invalid!
+Card: E2BDEDD70407E145
+Host: 09DCB249FEA42904
+!!! DO NOT RE-TRY THE SAME COMMAND/KEYS OR YOU MAY BRICK YOUR CARD !!!
+
+C:\Users\Null\Downloads\SAI>gp --key D3749ED4FF42FD58B39EEB562B017CD9 --key-enc 90379A3E7116D455E55F9398736A01CA --key-mac 473F36161A7F7F60CC3A766EA4BE5247 -l
+# OMNIKEY CardMan 5x21 0
+Read more from https://github.com/martinpaljak/GlobalPlatformPro/wiki/Keys
+STRICT WARNING: Card cryptogram invalid!
+Card: 242B6A8A8D2336A4
+Host: 0E4E8D5888ACB9C1
+!!! DO NOT RE-TRY THE SAME COMMAND/KEYS OR YOU MAY BRICK YOUR CARD !!!
+
+C:\Users\Null\Downloads\SAI>gp --key 90379A3E7116D455E55F9398736A01CA -l
+# OMNIKEY CardMan 5x21 0
+External authenticate failed: 0x6982 (Security status not satisfied)
+
+C:\Users\Null\Downloads\SAI>gp --key 90379A3E7116D455E55F9398736A01CA -l
+External authenticate failed: 0x6982 (Security status not satisfied)
+
+C:\Users\Null\Downloads\SAI>gp --key 90379A3E7116D455E55F9398736A01CA -l
+
+C:\Users\Null\Downloads\SAI>gp --reader Omnikey -i
+GlobalPlatformPro v20.01.23-0-g5ad373b
+Running on Windows 10 10.0 amd64, Java 1.8.0_421 by Oracle Corporation
+Reader "Omnikey" not found.
+
+C:\Users\Null\Downloads\SAI>gp --reader "Omnikey 5x21" -i
+GlobalPlatformPro v20.01.23-0-g5ad373b
+Running on Windows 10 10.0 amd64, Java 1.8.0_421 by Oracle Corporation
+Reader "Omnikey 5x21" not found.
+
+C:\Users\Null\Downloads\SAI>gp --reader "Omnikey 5x21 0" -i
+GlobalPlatformPro v20.01.23-0-g5ad373b
+Running on Windows 10 10.0 amd64, Java 1.8.0_421 by Oracle Corporation
+Reader "Omnikey 5x21 0" not found.
+
+C:\Users\Null\Downloads\SAI>gp --reader "OMNIKEY Cardman 5x21 0" -i
+GlobalPlatformPro v20.01.23-0-g5ad373b
+Running on Windows 10 10.0 amd64, Java 1.8.0_421 by Oracle Corporation
+Reader "OMNIKEY Cardman 5x21 0" not found.
+
+C:\Users\Null\Downloads\SAI>gp --reader "OMNIKEY Cardman 5x21 0" -i
+GlobalPlatformPro v20.01.23-0-g5ad373b
+Running on Windows 10 10.0 amd64, Java 1.8.0_421 by Oracle Corporation
+Reader "OMNIKEY Cardman 5x21 0" not found.
+
+C:\Users\Null\Downloads\SAI>gp --reader
+Option r/reader requires an argument
+
+Option                             Description
+------                             -----------
+-?, -h, --help                     Shows this help
+-V, --version                      Show information about the program
+-a, --apdu <String: APDU>          Send raw APDU (hex)
+--acr-add                          Add an access rule
+--acr-aid <String: AID>            ARA-C applet AID
+--acr-delete                       Delete an access rule
+--acr-hash <String: SHA1>          Certificate hash
+--acr-list                         List access rules
+--acr-list-aram                    List access rules from ARA-M
+--acr-rule <String>                Access control rule (can be 0x00(NEVER),0x01
+                                     (ALWAYS) or an APDU filter
+--allow-from                       Allow moving from created SSD
+--allow-to                         Allow moving to created SSD
+--applet <String: AID>             Applet AID
+--bs <Integer: bytes>              maximum APDU payload size
+--cap <File>                       Use a CAP file as source
+--create <String: AID>             Create new instance of an applet
+-d, --debug                        Show PC/SC and APDU trace
+--dap-domain <String: AID>         Domain to use for DAP verification
+--default                          Indicate Default Selected privilege
+--delete [String: AID]             Delete applet/package
+--delete-key <String>              Delete key with version
+--domain <String: AID>             Create supplementary security domain
+--dump <File>                      Dump APDU communication to <File>
+--emv                              Use EMV KDF
+-f, --force                        Force operation
+-i, --info                         Show information
+--initialize-card                  Transition ISD to INITIALIZED state
+--install [File]                   Install applet(s) from CAP
+--kcv <String: KCV>                Specify master key check value
+--kdf <String: kdf>                Use KDF with master key
+--kdf3                             Use SCP03 KDF KDF
+--key <String: key>                Specify master key
+--key-dek <String: key>            Specify card DEK key
+--key-enc <String: key>            Specify card ENC key
+--key-id <String>                  Specify key ID
+--key-mac <String: key>            Specify card MAC key
+--key-ver <String>                 Specify key version
+-l, --list                         List the contents of the card
+--list-privs                       List known privileges
+--load <File>                      Load a CAP file
+--lock <String: key>               Set new key
+--lock-applet <String: AID>        Lock applet
+--lock-card                        Lock card
+--lock-dek <String: key>           Set new DEK key
+--lock-enc <String: key>           Set new ENC key
+--lock-kdf <String: kdf>           Use KDF with lock key
+--lock-mac <String: key>           Set new MAC key
+--make-default <String: AID>       Make AID the default
+--mode <String: mac/enc/clr>       Secure channel to use (mac/enc/clr)
+--move <String: AID>               Move something
+--new-keyver <String>              Key version for the new key
+--op201                            Enable OpenPlatform 2.0.1 mode
+--package, --pkg <String: AID>     Package AID
+--params <String: HEX>             Installation parameters
+--privs <String>                   Specify privileges for installation
+--put-key <String: PEM file>       Put a new key
+-r, --reader <String>              Use specific reader
+--rename-isd <String: new AID>     Rename ISD
+--replay <File>                    Replay APDU responses from <File>
+-s, --secure-apdu <String: APDU>   Send raw APDU (hex) via SCP
+--sdaid <String: AID>              ISD AID
+--secure-card                      Transition ISD to SECURED state
+--set-perso <String: data>         Set Perso data in CPLC
+--set-pre-perso <String: data>     Set PrePerso data in CPLC
+--sha256                           Use SHA-256 for LFDB hash
+--store-data <String: data>        STORE DATA blob
+--store-data-chunk <String: data>  Send STORE DATA commands
+--terminals <String>               Use PC/SC provider from <jar:class>
+--terminate                        Indicate Card Lock+Terminate privilege
+--to <String: AID>                 Destination security domain
+--today                            Set date to today when updating CPLC
+--token-key <String: path>         Path to private key used in Delegated
+                                     Management token generation
+--uninstall <File>                 Uninstall applet/package
+--unlock                           Set default key for card key
+--unlock-applet <String: AID>      Unlock applet
+--unlock-card                      Unlock card
+-v, --verbose                      Be verbose about operations
+--visa2                            Use VISA2 KDF
+
+C:\Users\Null\Downloads\SAI>gp --reader "OMNIKEY CardMan 5x21 0" -i
+GlobalPlatformPro v20.01.23-0-g5ad373b
+Running on Windows 10 10.0 amd64, Java 1.8.0_421 by Oracle Corporation
+Reader: OMNIKEY CardMan 5x21 0
+ATR: 3B6A00FF0031C173C84000009000
+More information about your card:
+    http://smartcard-atr.appspot.com/parse?ATR=3B6A00FF0031C173C84000009000
+
+[WARN] GPData - Invalid CPLC date: 6431
+CPLC: ICFabricator=4790
+      ICType=D321
+      OperatingSystemID=4700
+      OperatingSystemReleaseDate=0000 (2010-01-01)
+      OperatingSystemReleaseLevel=0000
+      ICFabricationDate=3023 (2013-01-23)
+      ICSerialNumber=41855220
+      ICBatchIdentifier=5343
+      ICModuleFabricator=0000
+      ICModulePackagingDate=0000 (2010-01-01)
+      ICCManufacturer=0000
+      ICEmbeddingDate=0000 (2010-01-01)
+      ICPrePersonalizer=1294
+      ICPrePersonalizationEquipmentDate=6431 (invalid date format)
+      ICPrePersonalizationEquipmentID=38353532
+      ICPersonalizer=0000
+      ICPersonalizationDate=0000 (2010-01-01)
+      ICPersonalizationEquipmentID=00000000
+
+[WARN] GPData - GET DATA(IIN) not supported
+[WARN] GPData - GET DATA(CIN) not supported
+Card Data:
+[WARN] GPData - GET DATA(Card Data) not supported
+Card Capabilities:
+[WARN] GPData - GET DATA(Card Capabilities) not supported
+[WARN] GPData - GET DATA(Key Info Template) not supported
+
+C:\Users\Null\Downloads\SAI>gp --reader "OMNIKEY CardMan 5x21 0xx" --key-enc 90379A3E7116D455E55F9398736A01CA --key-mac 90379A3E7116D455E55F9398736A01CA --key-kek D3749ED4FF42FD58B39EEB562B017CD9 -l
+key-kek is not a recognized option
+
+Option                             Description
+------                             -----------
+-?, -h, --help                     Shows this help
+-V, --version                      Show information about the program
+-a, --apdu <String: APDU>          Send raw APDU (hex)
+--acr-add                          Add an access rule
+--acr-aid <String: AID>            ARA-C applet AID
+--acr-delete                       Delete an access rule
+--acr-hash <String: SHA1>          Certificate hash
+--acr-list                         List access rules
+--acr-list-aram                    List access rules from ARA-M
+--acr-rule <String>                Access control rule (can be 0x00(NEVER),0x01
+                                     (ALWAYS) or an APDU filter
+--allow-from                       Allow moving from created SSD
+--allow-to                         Allow moving to created SSD
+--applet <String: AID>             Applet AID
+--bs <Integer: bytes>              maximum APDU payload size
+--cap <File>                       Use a CAP file as source
+--create <String: AID>             Create new instance of an applet
+-d, --debug                        Show PC/SC and APDU trace
+--dap-domain <String: AID>         Domain to use for DAP verification
+--default                          Indicate Default Selected privilege
+--delete [String: AID]             Delete applet/package
+--delete-key <String>              Delete key with version
+--domain <String: AID>             Create supplementary security domain
+--dump <File>                      Dump APDU communication to <File>
+--emv                              Use EMV KDF
+-f, --force                        Force operation
+-i, --info                         Show information
+--initialize-card                  Transition ISD to INITIALIZED state
+--install [File]                   Install applet(s) from CAP
+--kcv <String: KCV>                Specify master key check value
+--kdf <String: kdf>                Use KDF with master key
+--kdf3                             Use SCP03 KDF KDF
+--key <String: key>                Specify master key
+--key-dek <String: key>            Specify card DEK key
+--key-enc <String: key>            Specify card ENC key
+--key-id <String>                  Specify key ID
+--key-mac <String: key>            Specify card MAC key
+--key-ver <String>                 Specify key version
+-l, --list                         List the contents of the card
+--list-privs                       List known privileges
+--load <File>                      Load a CAP file
+--lock <String: key>               Set new key
+--lock-applet <String: AID>        Lock applet
+--lock-card                        Lock card
+--lock-dek <String: key>           Set new DEK key
+--lock-enc <String: key>           Set new ENC key
+--lock-kdf <String: kdf>           Use KDF with lock key
+--lock-mac <String: key>           Set new MAC key
+--make-default <String: AID>       Make AID the default
+--mode <String: mac/enc/clr>       Secure channel to use (mac/enc/clr)
+--move <String: AID>               Move something
+--new-keyver <String>              Key version for the new key
+--op201                            Enable OpenPlatform 2.0.1 mode
+--package, --pkg <String: AID>     Package AID
+--params <String: HEX>             Installation parameters
+--privs <String>                   Specify privileges for installation
+--put-key <String: PEM file>       Put a new key
+-r, --reader <String>              Use specific reader
+--rename-isd <String: new AID>     Rename ISD
+--replay <File>                    Replay APDU responses from <File>
+-s, --secure-apdu <String: APDU>   Send raw APDU (hex) via SCP
+--sdaid <String: AID>              ISD AID
+--secure-card                      Transition ISD to SECURED state
+--set-perso <String: data>         Set Perso data in CPLC
+--set-pre-perso <String: data>     Set PrePerso data in CPLC
+--sha256                           Use SHA-256 for LFDB hash
+--store-data <String: data>        STORE DATA blob
+--store-data-chunk <String: data>  Send STORE DATA commands
+--terminals <String>               Use PC/SC provider from <jar:class>
+--terminate                        Indicate Card Lock+Terminate privilege
+--to <String: AID>                 Destination security domain
+--today                            Set date to today when updating CPLC
+--token-key <String: path>         Path to private key used in Delegated
+                                     Management token generation
+--uninstall <File>                 Uninstall applet/package
+--unlock                           Set default key for card key
+--unlock-applet <String: AID>      Unlock applet
+--unlock-card                      Unlock card
+-v, --verbose                      Be verbose about operations
+--visa2                            Use VISA2 KDF
+
+C:\Users\Null\Downloads\SAI>gp --reader "OMNIKEY CardMan 5x21 0xx" --key-enc 90379A3E7116D455E55F9398736A01CA --key-mac 90379A3E7116D455E55F9398736A01CA --key-dek D3749ED4FF42FD58B39EEB562B017CD9 -l
+Reader "OMNIKEY CardMan 5x21 0xx" not found.
+
+C:\Users\Null\Downloads\SAI>gp --reader "OMNIKEY CardMan 5x21 0" --key-enc 90379A3E7116D455E55F9398736A01CA --key-mac 90379A3E7116D455E55F9398736A01CA --key-dek D3749ED4FF42FD58B39EEB562B017CD9 -l
+External authenticate failed: 0x6982 (Security status not satisfied)
+
+C:\Users\Null\Downloads\SAI>gp --reader "OMNIKEY CardMan 5x21 0" --key-enc 90379A3E7116D455E55F9398736A01CA --key-mac 90379A3E7116D455E55F9398736A01CA --key-dek D3749ED4FF42FD58B39EEB562B017CD9 -l
+
+C:\Users\Null\Downloads\SAI>gp -i
+GlobalPlatformPro v20.01.23-0-g5ad373b
+Running on Windows 10 10.0 amd64, Java 1.8.0_421 by Oracle Corporation
+# OMNIKEY CardMan 5x21 0
+Reader: OMNIKEY CardMan 5x21 0
+ATR: 3B6A00FF0031C173C84000009000
+More information about your card:
+    http://smartcard-atr.appspot.com/parse?ATR=3B6A00FF0031C173C84000009000
+
+[WARN] GPData - Invalid CPLC date: 5C31
+CPLC: ICFabricator=4790
+      ICType=D321
+      OperatingSystemID=4700
+      OperatingSystemReleaseDate=0000 (2010-01-01)
+      OperatingSystemReleaseLevel=0000
+      ICFabricationDate=3023 (2013-01-23)
+      ICSerialNumber=41736720
+      ICBatchIdentifier=5343
+      ICModuleFabricator=0000
+      ICModulePackagingDate=0000 (2010-01-01)
+      ICCManufacturer=0000
+      ICEmbeddingDate=0000 (2010-01-01)
+      ICPrePersonalizer=124B
+      ICPrePersonalizationEquipmentDate=5C31 (invalid date format)
+      ICPrePersonalizationEquipmentID=37333637
+      ICPersonalizer=0000
+      ICPersonalizationDate=0000 (2010-01-01)
+      ICPersonalizationEquipmentID=00000000
+
+[WARN] GPData - GET DATA(IIN) not supported
+[WARN] GPData - GET DATA(CIN) not supported
+Card Data:
+[WARN] GPData - GET DATA(Card Data) not supported
+Card Capabilities:
+[WARN] GPData - GET DATA(Card Capabilities) not supported
+[WARN] GPData - GET DATA(Key Info Template) not supported
+# OMNIKEY CardMan 5x21-CL 0
+Could not connect to OMNIKEY CardMan 5x21-CL 0: Card not present.
+
+C:\Users\Null\Downloads\SAI>gp --reader "OMNIKEY CardMan 5x21 0" --key-enc 90379A3E7116D455E55F9398736A01CA --key-mac 90379A3E7116D455E55F9398736A01CA --key-dek D3749ED4FF42FD58B39EEB562B017CD9 -set-pre-perso 1111111111111111 -set-perso 2222222222222222 -today
+External authenticate failed: 0x6982 (Security status not satisfied)
+
+C:\Users\Null\Downloads\SAI>gp --reader "OMNIKEY CardMan 5x21 0" --key-enc 90379A3E7116D455E55F9398736A01CA --key-mac 90379A3E7116D455E55F9398736A01CA --key-dek D3749ED4FF42FD58B39EEB562B017CD9 -set-pre-perso 1111111111111111 -set-perso 2222222222222222 -today --mode enc
+External authenticate failed: 0x6982 (Security status not satisfied)
+
+C:\Users\Null\Downloads\SAI>gp --reader "OMNIKEY CardMan 5x21 0" --key-enc 90379A3E7116D455E55F9398736A01CA --key-mac 90379A3E7116D455E55F9398736A01CA --key-dek D3749ED4FF42FD58B39EEB562B017CD9 -set-pre-perso 1111111111111111 -set-perso 2222222222222222 -today -vvv --key-ver 2
+GlobalPlatformPro v20.01.23-0-g5ad373b
+Running on Windows 10 10.0 amd64, Java 1.8.0_421 by Oracle Corporation
+Reader: OMNIKEY CardMan 5x21 0
+ATR: 3B6A00FF0031C173C84000009000
+More information about your card:
+    http://smartcard-atr.appspot.com/parse?ATR=3B6A00FF0031C173C84000009000
+
+[DEBUG] GPSession - Auto-detected ISD: A000000151000000
+[WARN] PlaintextKeys - Don't know how to calculate KCV, defaulting to SCP02
+[WARN] PlaintextKeys - Don't know how to calculate KCV, defaulting to SCP02
+[WARN] PlaintextKeys - Don't know how to calculate KCV, defaulting to SCP02
+[INFO] GPSession - Using card master keys: ENC=90379A3E7116D455E55F9398736A01CA (KCV: 61883E) MAC=90379A3E7116D455E55F9398736A01CA (KCV: 61883E) DEK=D3749ED4FF42FD58B39EEB562B017CD9 (KCV: 7DFE3D) for null
+INITIALIZE UPDATE failed: 0x6A88 (Referenced data not found)
+
+C:\Users\Null\Downloads\SAI>gp --reader "OMNIKEY CardMan 5x21 0" --key-enc 90379A3E7116D455E55F9398736A01CA --key-mac 90379A3E7116D455E55F9398736A01CA --key-dek D3749ED4FF42FD58B39EEB562B017CD9 -l -vvv --key-ver 3
+GlobalPlatformPro v20.01.23-0-g5ad373b
+Running on Windows 10 10.0 amd64, Java 1.8.0_421 by Oracle Corporation
+Reader: OMNIKEY CardMan 5x21 0
+ATR: 3B6A00FF0031C173C84000009000
+More information about your card:
+    http://smartcard-atr.appspot.com/parse?ATR=3B6A00FF0031C173C84000009000
+
+[DEBUG] GPSession - Auto-detected ISD: A000000151000000
+[WARN] PlaintextKeys - Don't know how to calculate KCV, defaulting to SCP02
+[WARN] PlaintextKeys - Don't know how to calculate KCV, defaulting to SCP02
+[WARN] PlaintextKeys - Don't know how to calculate KCV, defaulting to SCP02
+[INFO] GPSession - Using card master keys: ENC=90379A3E7116D455E55F9398736A01CA (KCV: 61883E) MAC=90379A3E7116D455E55F9398736A01CA (KCV: 61883E) DEK=D3749ED4FF42FD58B39EEB562B017CD9 (KCV: 7DFE3D) for null
+INITIALIZE UPDATE failed: 0x6A88 (Referenced data not found)
+
+C:\Users\Null\Downloads\SAI>gp --reader "OMNIKEY CardMan 5x21 0" --key-enc 90379A3E7116D455E55F9398736A01CA --key-mac 90379A3E7116D455E55F9398736A01CA --key-dek D3749ED4FF42FD58B39EEB562B017CD9 -l -vvv --key-ver 1
+GlobalPlatformPro v20.01.23-0-g5ad373b
+Running on Windows 10 10.0 amd64, Java 1.8.0_421 by Oracle Corporation
+Reader: OMNIKEY CardMan 5x21 0
+ATR: 3B6A00FF0031C173C84000009000
+More information about your card:
+    http://smartcard-atr.appspot.com/parse?ATR=3B6A00FF0031C173C84000009000
+
+[DEBUG] GPSession - Auto-detected ISD: A000000151000000
+[WARN] PlaintextKeys - Don't know how to calculate KCV, defaulting to SCP02
+[WARN] PlaintextKeys - Don't know how to calculate KCV, defaulting to SCP02
+[WARN] PlaintextKeys - Don't know how to calculate KCV, defaulting to SCP02
+[INFO] GPSession - Using card master keys: ENC=90379A3E7116D455E55F9398736A01CA (KCV: 61883E) MAC=90379A3E7116D455E55F9398736A01CA (KCV: 61883E) DEK=D3749ED4FF42FD58B39EEB562B017CD9 (KCV: 7DFE3D) for null
+INITIALIZE UPDATE failed: 0x6A88 (Referenced data not found)
+
+C:\Users\Null\Downloads\SAI>gp --reader "OMNIKEY CardMan 5x21 0" --key-enc 90379A3E7116D455E55F9398736A01CA --key-mac 90379A3E7116D455E55F9398736A01CA --key-dek D3749ED4FF42FD58B39EEB562B017CD9 -i
+GlobalPlatformPro v20.01.23-0-g5ad373b
+Running on Windows 10 10.0 amd64, Java 1.8.0_421 by Oracle Corporation
+Reader: OMNIKEY CardMan 5x21 0
+ATR: 3B6A00FF0031C173C84000009000
+More information about your card:
+    http://smartcard-atr.appspot.com/parse?ATR=3B6A00FF0031C173C84000009000
+
+[WARN] GPData - Invalid CPLC date: 5C31
+CPLC: ICFabricator=4790
+      ICType=D321
+      OperatingSystemID=4700
+      OperatingSystemReleaseDate=0000 (2010-01-01)
+      OperatingSystemReleaseLevel=0000
+      ICFabricationDate=3023 (2013-01-23)
+      ICSerialNumber=41736720
+      ICBatchIdentifier=5343
+      ICModuleFabricator=0000
+      ICModulePackagingDate=0000 (2010-01-01)
+      ICCManufacturer=0000
+      ICEmbeddingDate=0000 (2010-01-01)
+      ICPrePersonalizer=124B
+      ICPrePersonalizationEquipmentDate=5C31 (invalid date format)
+      ICPrePersonalizationEquipmentID=37333637
+      ICPersonalizer=0000
+      ICPersonalizationDate=0000 (2010-01-01)
+      ICPersonalizationEquipmentID=00000000
+
+[WARN] GPData - GET DATA(IIN) not supported
+[WARN] GPData - GET DATA(CIN) not supported
+Card Data:
+[WARN] GPData - GET DATA(Card Data) not supported
+Card Capabilities:
+[WARN] GPData - GET DATA(Card Capabilities) not supported
+[WARN] GPData - GET DATA(Key Info Template) not supported
+
+C:\Users\Null\Downloads\SAI>gp --reader "OMNIKEY CardMan 5x21 0" --key-enc 90379A3E7116D455E55F9398736A01CA --key-mac 90379A3E7116D455E55F9398736A01CA --key-dek D3749ED4FF42FD58B39EEB562B017CD9 --debug
+GlobalPlatformPro v20.01.23-0-g5ad373b
+Running on Windows 10 10.0 amd64, Java 1.8.0_421 by Oracle Corporation
+# Detected readers from JNA2PCSC
+[*] OMNIKEY CardMan 5x21 0
+[*] OMNIKEY CardMan 5x21-CL 0
+SCardConnect("OMNIKEY CardMan 5x21 0", T=*) -> T=0, 3B6A00FF0031C173C84000009000
+SCardBeginTransaction("OMNIKEY CardMan 5x21 0")
+A>> T=0 (4+0000) 00A40400 00
+A<< (0018+2) (71ms) 6F108408A000000151000000A5049F6501FF 9000
+[TRACE] GPSession -  [6F]
+[TRACE] GPSession -      [84] A000000151000000
+[TRACE] GPSession -      [A5]
+[TRACE] GPSession -          [9F65] FF
+[DEBUG] GPSession - Auto-detected ISD: A000000151000000
+SCardEndTransaction("OMNIKEY CardMan 5x21 0")
+SCardDisconnect("OMNIKEY CardMan 5x21 0", true) tx:5/rx:20
+
+C:\Users\Null\Downloads\SAI>gp --reader "OMNIKEY CardMan 5x21 0" --key-enc 90379A3E7116D455E55F9398736A01CA --key-mac 90379A3E7116D455E55F9398736A01CA --key-dek D3749ED4FF42FD58B39EEB562B017CD9 --debug
+
+C:\Users\Null\Downloads\SAI>gp -i
+GlobalPlatformPro v20.01.23-0-g5ad373b
+Running on Windows 10 10.0 amd64, Java 1.8.0_421 by Oracle Corporation
+# OMNIKEY CardMan 5x21 0
+Reader: OMNIKEY CardMan 5x21 0
+ATR: 3B6A00FF0031C173C84000009000
+More information about your card:
+    http://smartcard-atr.appspot.com/parse?ATR=3B6A00FF0031C173C84000009000
+
+[WARN] GPData - Invalid CPLC date: 5C31
+CPLC: ICFabricator=4790
+      ICType=D321
+      OperatingSystemID=4700
+      OperatingSystemReleaseDate=0000 (2010-01-01)
+      OperatingSystemReleaseLevel=0000
+      ICFabricationDate=3023 (2013-01-23)
+      ICSerialNumber=41736720
+      ICBatchIdentifier=5343
+      ICModuleFabricator=0000
+      ICModulePackagingDate=0000 (2010-01-01)
+      ICCManufacturer=0000
+      ICEmbeddingDate=0000 (2010-01-01)
+      ICPrePersonalizer=124B
+      ICPrePersonalizationEquipmentDate=5C31 (invalid date format)
+      ICPrePersonalizationEquipmentID=37333637
+      ICPersonalizer=0000
+      ICPersonalizationDate=0000 (2010-01-01)
+      ICPersonalizationEquipmentID=00000000
+
+[WARN] GPData - GET DATA(IIN) not supported
+[WARN] GPData - GET DATA(CIN) not supported
+Card Data:
+[WARN] GPData - GET DATA(Card Data) not supported
+Card Capabilities:
+[WARN] GPData - GET DATA(Card Capabilities) not supported
+[WARN] GPData - GET DATA(Key Info Template) not supported
+# OMNIKEY CardMan 5x21-CL 0
+Could not connect to OMNIKEY CardMan 5x21-CL 0: Card not present.
