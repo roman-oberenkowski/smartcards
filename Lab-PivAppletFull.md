@@ -1,6 +1,7 @@
 # Intro
-The sections below guide the user how to turn the blank SmartCafe Expert 4.0 into PIV-capable token and how to load user's certificate (and RSA2048 private key) from PUT eLogin service onto the card (or any other). 
+The sections below, guide the user how to turn the blank SmartCafe Expert 4.0 into PIV-capable token and how to load user's certificate (and RSA2048 private key) from PUT eLogin service onto the card. Other certificates can also be used with presented procedure.
 - The PIV applet used, is Yubico-compatible. That means, that the procedure described in 'Initialize PIV applet' can also be used with every Yubikey that supports PIV (e.g. Yubikey 5).
+- At the end of the procedure the card can be used with OpenSC or any other PIV-supporting system. Windows will (by default) automatically import certificates strored on PIV smartcard and allow to use them without any configuration/drivers needed.
 - Used OS: SUSE Leap 15.6 (java and openssl were already instaled by default)
 - This is only for educational purposes only, as the guide doesn't include changing all the keys/PINs/secrets, nor does it transition the card into SECURED state. 
 - The result is not a secure product. You have been warned.
@@ -212,6 +213,23 @@ pkcs11-tool -L # lists slots/cards
 pkcs11-tool -O # lists card's objects
 pkcs11-tool --login --test
 ```
+## (cleanup) Remove the certificate from the smartcard
+```
+yubico-piv-tool -r '' -a delete-certificate -s 9a
+```
+WARNING: the private key is not deleted in the process. See next section
+## (cleanup) Override the current private key with a new one
+```
+# after providing PIN, input 'test', press enter, press CTRL+D
+yubico-piv-tool -r '' -a verify-pin --sign  -s 9a
+
+# generate new key in the same slot
+yubico-piv-tool -r '' -a generate -s 9a -A RSA2048
+
+# after providing PIN, input 'test', press enter, press CTRL+D
+yubico-piv-tool -r '' -a verify-pin --sign  -s 9a
+```
+Compare if both signatures are the same. If not - the key got overwritten
 
 ## Additional commands
 ### Change PIN
@@ -222,3 +240,7 @@ yubico-piv-tool -r '' -a change-pin
 ```
 yubico-piv-tool -r '' -a unblock-pin
 ```
+### Complete factory reset
+- https://support.yubico.com/hc/en-us/articles/360013645480-Resetting-the-Smart-Card-PIV-Application-on-Your-YubiKey
+    - tested, doesn't work - "Reset failed, are pincodes blocked?" resets some info, but the applet gets unusable
+- The workaround is to remove and install an applet again
