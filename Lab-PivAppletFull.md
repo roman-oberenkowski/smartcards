@@ -1,7 +1,7 @@
 # Intro
 The sections below, guide the user how to turn the blank SmartCafe Expert 4.0 into PIV-capable token and how to load user's certificate (and RSA2048 private key) from PUT eLogin service onto the card. Other certificates can also be used with presented procedure.
 - The PIV applet used, is Yubico-compatible. That means, that the procedure described in 'Initialize PIV applet' can also be used with every Yubikey that supports PIV (e.g. Yubikey 5).
-- At the end of the procedure the card can be used with OpenSC or any other PIV-supporting system. Windows will (by default) automatically import certificates strored on PIV smartcard and allow to use them without any configuration/drivers needed.
+- At the end of the procedure the card can be used with OpenSC or any other PIV-supporting system. Windows will (by default) automatically imports certificates stored on PIV smartcard and allows to use them without any configuration/drivers needed.
 - Used OS: SUSE Leap 15.6 (java and openssl were already instaled by default)
 - This is only for educational purposes only, as the guide doesn't include changing all the keys/PINs/secrets, nor does it transition the card into SECURED state. 
 - The result is not a secure product. You have been warned.
