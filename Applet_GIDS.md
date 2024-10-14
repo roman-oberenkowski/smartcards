@@ -90,3 +90,4 @@ Sometimes the certificate gets imported automatically, sometimes it doesn't. The
 - 'Personal'
 - 'Next', 'Finish', Done
 - You may need to restart your web-browser to register the new certificate and offer it during login
+- Certificate has to be valid (not expired) to show-up (at least in Edge) during web-login
