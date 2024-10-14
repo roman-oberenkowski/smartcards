@@ -47,3 +47,32 @@ certutil -scinfo
     - TLS client authentication
     - VPN authentication
     - source: [link](https://www.microcosm.com/blog/generic-identity-device-specification-gids-smart-card-authentication)
+
+### Quick GIDS guide for new cards (Windows)
+- Install JAVA
+- Download [gp.exe](https://github.com/martinpaljak/GlobalPlatformPro/releases)
+- Download [GidsApplet.cap](https://github.com/martinpaljak/GlobalPlatformPro/releases)
+- Download [InitializeGids.exe](http://download.mysmartlogon.com/gids/InitializeGids.exe)
+```
+gp --emv --unlock
+gp --install GidsApplet.cap
+gp --secure-card
+gp --lock <new 32hex key>
+```
+- Initialize the GIDS applet using the tool
+  - choose your PIN
+  - choose you admin key (used to reset if PIN is entered wrong 3 times in a row)
+  - leave the serial as is or change it a little (it is random, different every time you open InitializeGids tool)
+  - click initialize card
+- Import your certificate and private key onto the card:
+```
+certutil -csp "Microsoft Base Smart Card Crypto Provider" -importpfx certificate.name@put.poznan.pl.p12
+```
+- provide the certificate password
+- provide the card's PIN (Gids's PIN)
+- test using `certutil -scinfo` (admin rights are NOT required)
+#### Delete/Update the certificate
+- option 1: just import a new certificate to the card (will be two)
+- option 2: delete the old one (see below), import a new one (see above)
+  - To find the container value, type certutil.exe -scinfo. A value shoul look like this `"certificate.name@put.poznan.pl--03071"`
+  - To delete a container (and its certificate/private key), type certutil.exe -delkey -csp "Microsoft Base Smart Card Crypto Provider" "<ContainerValue>".
