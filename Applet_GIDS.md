@@ -76,3 +76,17 @@ certutil -csp "Microsoft Base Smart Card Crypto Provider" -importpfx certificate
 - option 2: delete the old one (see below), import a new one (see above)
   - To find the container value, type certutil.exe -scinfo. A value shoul look like this `"certificate.name@put.poznan.pl--03071"`
   - To delete a container (and its certificate/private key), type certutil.exe -delkey -csp "Microsoft Base Smart Card Crypto Provider" "<ContainerValue>".
+#### Manually import certificate from the card to the Windows OS
+Sometimes the certificate gets imported automatically, sometimes it doesn't. The manual way of doing it is as follows:
+- `certutil -scinfo`
+- do not provide your PIN - click cancel/escape
+- when 'Certificate List' appears select 'More choices' (if needed)
+- select the certificate
+- 'Click here to view certificate properties'
+- 'Install certificate'
+- 'Current user'
+- 'Place certificate in the following store'
+- 'Browse'
+- 'Personal'
+- 'Next', 'Finish', Done
+- You may need to restart your web-browser to register the new certificate and offer it during login
