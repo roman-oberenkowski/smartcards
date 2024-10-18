@@ -7,7 +7,7 @@
 1. What does it say?
 1. What kind of hardware is required (which protocol has to be supported?, how to find such device when shopping? by which name/term?)
 ## Windows hello (FIDO2)
-<win hello introduction>
+Here: <win hello introduction>
 1. Go to Settings (WIN+I shortcut)
 1. Accounts -> Sign-in options
 1. PIN (Windows Hello) -> Set up
@@ -37,4 +37,6 @@ certutil -csp "Microsoft Base Smart Card Crypto Provider" -importpfx your.certif
 ```
 1. Provide your cerificate password and selected PIN.
 1. Try to login to eKursy using the certificate
-2. Did it work? Why?
+2. Did it work? If not, why?
+3. `Your security device is blocked`?
+4. 
