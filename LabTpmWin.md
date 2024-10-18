@@ -38,16 +38,18 @@ Note: TPM virtual smartcard is NOT connected with Win Hello
 1. Provide your cerificate password and selected PIN.
 1. Try to login to eKursy using the certificate (please use Edge browser, Firefox is misconfigured on our VM)
 3. Did it work? If not, why?
-4. Wait a bit, log-out, close the browser.
-5. Try to log-in again using the certificate, but provide incorrect password as many times as possible.
+4. Can you access eKursy?
+5. Is there another system, that still requires your password? If yes - which one?
+6. Log-out, close the browser.
+7. Try to log-in again using the certificate, but provide incorrect password as many times as possible.
    - If it didn't ask for a PIN, restart Windows and try again.
-6. What does the final error say?
-7. How can you restore your access?
-8. Consult the device manager again to check the state of `tpm-smartcard-test1` is it ok?
-9. Open run dialog (WIN+R), type `tpm.msc`
-10. Click `Clear the TPM`, read (there won't be another chance), press apprioprate button.
-11. The device restarts, how did it ask you to prove user presence? (VM-none)
+8. What does the final error say?
+9. How can you restore your access?
+10. Consult the device manager again to check the state of `tpm-smartcard-test1` is it ok?
+11. Open run dialog (WIN+R), type `tpm.msc`
+12. Click `Clear the TPM`, read (there won't be another chance), press apprioprate button.
+13. The device restarts, how did it ask you to prove user presence? (VM-none)
     Why should a TPM reset be confirmed by user presence, and how to do it?
-13. Try to login again using your certificate.
-14. Open device manager again, is something wrong? Why?
-15. How to restore it?
+14. Try to login again using your certificate.
+15. Open device manager again, is something wrong? Why?
+16. How to restore it?
