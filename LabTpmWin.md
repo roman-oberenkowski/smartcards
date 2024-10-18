@@ -7,7 +7,7 @@
 1. What does it say?
 1. What kind of hardware is required (which protocol has to be supported?, how to find such device when shopping? by which name/term?)
 ## Windows hello (FIDO2)
-Here: <win hello introduction>
+Here: `win hello introduction`
 1. Go to Settings (WIN+I shortcut)
 1. Accounts -> Sign-in options
 1. PIN (Windows Hello) -> Set up
@@ -27,18 +27,19 @@ Note: TPM virtual smartcard is NOT connected with Win Hello
   ```
   tpmvscmgr create /name tpm-smartcard-test1 /adminkey random /pin prompt /generate
   ```
-1. It asked you for a PIN, please remember it
+1. It asked you to create a PIN, please remember it
 1. Go back to the device manager, have something changed?
-1. Download your student certificate from [elogin](https://elogin.put.poznan.pl/app/certificates/own) ("Download certificate with private key" button)
-1. Go to [eLogin settings](https://elogin.put.poznan.pl/app/settings) and check 'I want to be able to log in automatically' (using my certificate)
-1. Open administrator command prompt and change directory to the one containing your certificate
+1. Download your student certificate from [elogin](https://elogin.put.poznan.pl/app/certificates/own) (by clicking the "Download certificate with private key" button)
+1. Go to [eLogin settings](https://elogin.put.poznan.pl/app/settings) and check 'I want to be able to log in automatically' (using my certificate). Press 'Submit'.
+1. Open administrator command prompt and change directory to the one containing your certificate. Execute the following:
   ```
   certutil -csp "Microsoft Base Smart Card Crypto Provider" -importpfx your.certificate.p12
   ```
 1. Provide your cerificate password and selected PIN.
-1. Try to login to eKursy using the certificate (please use Edge browser, firefox is misconfigured on our VM)
+1. Try to login to eKursy using the certificate (please use Edge browser, Firefox is misconfigured on our VM)
 3. Did it work? If not, why?
-4. Wait a bit, log-out, log-in again using the certificate, but provide incorrect password as many times as possible.
+4. Wait a bit, log-out, close the browser.
+5. Try to log-in again using the certificate, but provide incorrect password as many times as possible.
    - If it didn't ask for a PIN, restart Windows and try again.
 6. What does the final error say?
 7. How can you restore your access?
@@ -46,5 +47,6 @@ Note: TPM virtual smartcard is NOT connected with Win Hello
 9. Open run dialog (WIN+R), type `tpm.msc`
 10. Click `Clear the TPM`, read (there won't be another chance), press apprioprate button.
 11. The device restarts, how did it ask you to prove user presence? (VM-none)
-12. Open device manager again, is something wrong? Why?
-13. How to restore it?
+12. Try to login again using your certificate.
+13. Open device manager again, is something wrong? Why?
+14. How to restore it?
