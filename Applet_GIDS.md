@@ -49,9 +49,9 @@ certutil -scinfo
     - source: [link](https://www.microcosm.com/blog/generic-identity-device-specification-gids-smart-card-authentication)
 
 ### Quick GIDS guide for new cards (Windows)
-- Install JAVA
 - Download [gp.exe](https://github.com/martinpaljak/GlobalPlatformPro/releases)
-- Download [GidsApplet.cap](https://github.com/martinpaljak/GlobalPlatformPro/releases)
+  - Install Java ([JDK23](https://www.oracle.com/pl/java/technologies/downloads/) for GlobalPlatformPro v24.10.15 or [JRE8](https://www.java.com/en/download/) for GlobalPlatformPro v20.08.12)
+- Download [GidsApplet.cap](https://github.com/vletoux/GidsApplet)
 - Download [InitializeGids.exe](http://download.mysmartlogon.com/gids/InitializeGids.exe)
 ```
 gp --emv --unlock
@@ -64,7 +64,7 @@ gp --lock <new 32hex key>
   - choose you admin key (used to reset if PIN is entered wrong 3 times in a row)
   - leave the serial as is or change it a little (it is random, different every time you open InitializeGids tool)
   - click initialize card
-- Import your certificate and private key onto the card:
+- Import your certificate and private key onto the card (requires administrator privileges):
 ```
 certutil -csp "Microsoft Base Smart Card Crypto Provider" -importpfx certificate.name@put.poznan.pl.p12
 ```
