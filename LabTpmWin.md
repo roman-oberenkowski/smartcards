@@ -1,4 +1,5 @@
 # Lab TPM Windows
+Use local Administrator account (some virtual smartcard commands require admin privileges and it's a bit faster this way)
 ## Warmup
 1. Boot Win11-Security-EN
 1. Go to webauthn/passkey demo site [webauthn demo site](https://webauthn.me/) or [passkey.org](https://passkey.org/)
