@@ -1,7 +1,7 @@
 # Lab TPM Windows
 ## Warmup
 1. Boot Win11-Security-EN
-1. Go to [webauthn demo site](https://webauthn.me/)
+1. Go to [webauthn demo site](https://webauthn.me/) or [passkey.org](https://passkey.org/)
 1. Select a desired username and press register
 1. New window will pop-up (if minimized - find it on the taskbar)
 1. What does it say?
