@@ -18,8 +18,8 @@ Here: `win hello introduction`
 1. Try to login again, but provide incorrect pin as many times as possible (simulating a brute-force attack)
 1. How many tries did it take you to block Windows hello?
 1. How you can reset the retry counter?
-1. <TPM lockout, screenshot>
-1. Did user's Windows account login by PIN also got blocked?
+1. `TPM lockout, screenshot HERE`
+1. Did user's Windows account login by PIN also got blocked? (shortcut: WIN+L)
 ## TPM virtual smartcard 
 Note: TPM virtual smartcard is NOT connected with Win Hello
 1. Open device manager (shortcut: WIN+X, M) look for 'Smart Card readers' are there any?
@@ -47,6 +47,7 @@ Note: TPM virtual smartcard is NOT connected with Win Hello
 9. Open run dialog (WIN+R), type `tpm.msc`
 10. Click `Clear the TPM`, read (there won't be another chance), press apprioprate button.
 11. The device restarts, how did it ask you to prove user presence? (VM-none)
-12. Try to login again using your certificate.
-13. Open device manager again, is something wrong? Why?
-14. How to restore it?
+    Why should a TPM reset be confirmed by user presence, and how to do it?
+13. Try to login again using your certificate.
+14. Open device manager again, is something wrong? Why?
+15. How to restore it?
