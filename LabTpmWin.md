@@ -24,19 +24,24 @@ Here: <win hello introduction>
 Note: TPM virtual smartcard is NOT connected with Win Hello
 1. Open device manager (shortcut: WIN+X, M) look for 'Smart Card readers' are there any?
 1. Open administrator command prompt and type
-```
-tpmvscmgr create /name tpm-test1 /adminkey random /pin prompt /generate
-```
+  ```
+  tpmvscmgr create /name tpm-smartcard-test1 /adminkey random /pin prompt /generate
+  ```
 1. It asked you for a PIN, please remember it
 1. Go back to the device manager, have something changed?
 1. Download your student certificate from [elogin](https://elogin.put.poznan.pl/app/certificates/own)
 1. Go to [eLogin settings](https://elogin.put.poznan.pl/app/settings) and check 'I want to be able to log in automatically' (using my certificate)
 1. Open administrator command prompt and change directory to the one containing your certificate
-```
-certutil -csp "Microsoft Base Smart Card Crypto Provider" -importpfx your.certificate.p12
-```
+  ```
+  certutil -csp "Microsoft Base Smart Card Crypto Provider" -importpfx your.certificate.p12
+  ```
 1. Provide your cerificate password and selected PIN.
-1. Try to login to eKursy using the certificate
-2. Did it work? If not, why?
-3. `Your security device is blocked`?
-4. 
+1. Try to login to eKursy using the certificate (please use Edge browser, firefox is misconfigured on our VM)
+3. Did it work? If not, why?
+4. If `Your security device is blocked` restart Windows and try again
+5. Consult the device manager again to check the state of `tpm-smartcard-test1` is it ok?
+6. Open run dialog (WIN+R), type `tpm.msc`
+7. Click `Clear the TPM`, read (there won't be another chance), press apprioprate button.
+8. The device restarts, how did it ask you to prove user presence? (VM-none)
+9. Open device manager again, is something wrong? Why?
+10. How to restore it?
