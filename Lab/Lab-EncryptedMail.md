@@ -50,20 +50,21 @@ pcsc_scan
 mkdir ~/lab-cert
 cd ~/lab-cert
 openssl genrsa -out ca.key 2048
-openssl req -new -x509 -days 3650 -key ca.key -out ca.crt -extensions v3_ca
+openssl req -new -x509 -days 3650 -key ca.key -out ca.crt -extensions v3_ca -subj "/C=PL/ST=Poznan/L=Poznan/O=BSI Test CA/OU=BSI Test CA/CN=BSI Test CA"
 ```
 
 ### Generate private key and certificates (can be different for every smartcard)
 ```
-openssl genrsa -out BSI.key 2048
-openssl req -new -key BSI.key -out req_BSI.csr
-openssl x509 -req -days 3650 -in req_BSI.csr -CA ca.crt -CAkey ca.key -set_serial 1 -out BSI.crt  -addtrust emailProtection -addrej  
-ect clientAuth -addreject serverAuth -trustout  -extensions smime 
+export CARD_NUM=1
+openssl genrsa -out $CARD_NUM.key 2048
+openssl req -new -key $CARD_NUM.key -out $CARD_NUM.csr -subj "/C=PL/ST=Poznan/L=Poznan/O=BSI Test Cards/OU=BSI Test Card $CARD_NUM/CN=BSI Test CA"
+openssl x509 -req -days 3650 -in $CARD_NUM.csr -CA ca.crt -CAkey ca.key -set_serial $CARD_NUM -out $CARD_NUM.crt  -addtrust emailProtection -addreject clientAuth -addreject serverAuth -trustout -extensions smime 
 ```
 
 ### Create pkcs12 file (.p12/.pfx) that can be imported onto the card
 ```
-openssl pkcs12 -export -in BSI.crt -inkey BSI.key -out BSI.p12
+export CARD_NUM=1
+openssl pkcs12 -export -in $CARD_NUM.crt -inkey $CARD_NUM.key -out $CARD_NUM.p12 -passout pass:test
 ```
 
 ### Import pkcs12 onto the GIDS smartcard
