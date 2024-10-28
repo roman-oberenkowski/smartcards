@@ -244,3 +244,21 @@ yubico-piv-tool -r '' -a unblock-pin
 - https://support.yubico.com/hc/en-us/articles/360013645480-Resetting-the-Smart-Card-PIV-Application-on-Your-YubiKey
     - tested, doesn't work - "Reset failed, are pincodes blocked?" resets some info, but the applet gets unusable
 - The workaround is to remove and install an applet again
+
+### Bulk prepare script
+- `.p12` files in `lab-cert` subfolder
+- `PivApplet-0.9.0-jc221-RESLD.cap` in the current directory
+- global platform (`gp` command) in the PATH
+- yubico-piv-tool in the PATH
+- tested on NixOS
+- press any key after correct card is inserted into the reader. repeat...
+```
+for CARD_NUM in {1..18} ; do
+    echo Will now write $CARD_NUM
+    read -n 1 -s -r -p "Press any key to continue"
+    gp --emv --unlock &&  
+    gp --install PivApplet-0.9.0-jc221-RESLD.cap && 
+    yubico-piv-tool -r '' -a import-key -a import-cert -s 9a -KPKCS12 -i lab-cert/$CARD_NUM.p12 -p test &&
+    yubico-piv-tool -r '' -a import-key -a import-cert -s 9e -KPKCS12 -i lab-cert/Common.p12 -p test
+done;
+```
