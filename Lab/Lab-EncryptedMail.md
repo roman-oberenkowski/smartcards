@@ -93,6 +93,11 @@ pkcs15-init --auth-id 80 --pin 12345678 --verify-pin -f PKCS12 -S BSI.p12 --pass
 ```
 - `--passphrase` - the password to .p12 file
 - `--pin` - PIN selected during the initialization phase
+#### Script
+(temp)
+```
+export CN=1 && gids-tool -X -v --pin 12345678 --serial-number 0000000000000000000000000000000$CN --admin-key 000000000000000000000000000000000000000000000001 && pkcs15-init --auth-id 80 --pin 12345678 --verify-pin -f PKCS12 -S $CN.p12 --passphrase "test" && pkcs15-init --auth-id 80 --pin 12345678 --verify-pin -f PKCS12 -S Common.p12 --passphrase "test"
+```
 
 ### Check if the certificate got imported properly
 - List certificates (and other objects)
