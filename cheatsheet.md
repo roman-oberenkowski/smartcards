@@ -20,3 +20,11 @@ java -jar gp.jar -package A000000308000010 -applet A000000308000010000100 -creat
 gp --delete A000000308000010000100
 gp -package A000000308000010 -applet A000000308000010000100 -create A000000308000010000100
 ```
+## Misc
+### Wait for the card and do something
+```
+while true ; do
+  opensc-tool --wait --atr &&
+  pkcs11-tool -O && sleep 2 ;
+done
+```
