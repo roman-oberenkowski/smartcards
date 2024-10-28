@@ -73,7 +73,7 @@ openssl req -new -x509 -days 3650 -key ca.key -out ca.crt -extensions v3_ca -sub
 
 for CARD_NUM in {1..16}; do 
     openssl genrsa -out $CARD_NUM.key 2048
-    openssl req -new -key $CARD_NUM.key -out $CARD_NUM.csr -subj "/C=PL/ST=Poznan/L=Poznan/O=BSI Test Cards/OU=BSI Test Card $CARD_NUM/CN=BSI Test CA"
+    openssl req -new -key $CARD_NUM.key -out $CARD_NUM.csr -subj "/C=PL/ST=Poznan/L=Poznan/O=BSI Lab/OU=BSI Test Cards/CN=BSI Test Card $CARD_NUM"
     openssl x509 -req -days 3650 -in $CARD_NUM.csr -CA ca.crt -CAkey ca.key -set_serial $CARD_NUM -out $CARD_NUM.crt  -addtrust emailProtection -addreject clientAuth -addreject serverAuth -trustout -extensions smime 
     openssl pkcs12 -export -in $CARD_NUM.crt -inkey $CARD_NUM.key -out $CARD_NUM.p12 -passout pass:test
 done;
