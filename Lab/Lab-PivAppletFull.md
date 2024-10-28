@@ -259,6 +259,6 @@ for CARD_NUM in {1..18} ; do
     gp --emv --unlock &&  
     gp --install PivApplet-0.9.0-jc221-RESLD.cap && 
     yubico-piv-tool -r '' -a import-key -a import-cert -s 9a -KPKCS12 -i lab-cert/$CARD_NUM.p12 -p test &&
-    yubico-piv-tool -r '' -a import-key -a import-cert -s 9e -KPKCS12 -i lab-cert/Common.p12 -p test
+    yubico-piv-tool -r '' -a import-key -a import-cert -s 9d -KPKCS12 -i lab-cert/Common.p12 -p test
 done;
 ```
