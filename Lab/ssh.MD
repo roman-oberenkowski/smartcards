@@ -58,7 +58,8 @@ student@lab-net-4:~> ssh lab-net-3
   sudo passwd student
   ```
   
-### List of all card pubkeys (with a premade command):
+### Premade server commands (with a list of all card pubkeys):
+Course instructor does it on one machine.
 ```
 echo -e '
 ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC7Sy3FuwbfRSuN3zwCtFQtO6GrraMzHjIQXqDdhi9UignV4Dg9ZxXW31BVKxv2cIsUdXAT3NMn7TGfYzu1pgNPkeKhTYO/BSy51wLldODZH+irWWi5/JSyrtDr7dCtHUTzp0pLEKSF0dw6q1kce56kT2+pMVFP96C2refDxHhxk9z4Naorw7F9RP1momdvJ1ZKIxlXVmB+ArRhWAsIw8rlDbif9Rwh5jE0/CulGFik68rql6UIFYBexzkVPwCTVVXMDke6v2U2P0QqtOnthxAiHmW0m3hW6OBPoSjb/qM76eEaugmP84fJDLWhSsypR+ECACJUroBQItfh4NsF/X3P PIV AUTH pubkey
@@ -80,6 +81,8 @@ ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDVZDmWAJ0Lvd8tEugvlnPb2cE12L4qS9hhx1AFp2iI
 ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC96Btg6Fj8KABhN7IrmEytrL5rDYMTaxUipnTwKUsUnZbgOstaFwESZkHOI53o0SVRzO8ERiKDwsgRxAl3x2GtHAbHUPS3YkdvAoOTIZiRUv22alch3/hhioHzjsRacH4DbbPHLTlL1HrfIM96a7Deg63GChLPP1y2nZ5aIOyG6Rlp76rZtYpM6gNR0+zIQhdCJnIcl75CglodNzulFPsMHtMjWdq904QLGKgyauDUYHM3GdUlv1AXPLDgjwOBfxb/j1xAhCOSYLpYich38Oe7E1Vp6UkHt13JYkxrPL2eKv2JPZnCZRW28IzBrE96fy9TTw5N7NsB0ttQoTONYs53 PIV AUTH pubkey
 ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC7/hLcwU+dK6zQtGpXF3566ePilzDA/G++sToC0UIMz21RUWYdFPZ2uIw4gNahyWVIg5M33gwZQ5ZL5eJgofF+LCbru3xEIcWTJYOrtG+mWZPElfeVr0BFN2HiY4aDuvER7nad0/VqIt/mLcgUozYT5f2tfCfhvk5sR4DvzFM9Il3OUfM7F84wuONykMbz9VStq10988bsFk53YCGe3Vz/OJYNuAQayaUy/+pb7ngOzTvKlF3imS7yvhAvPOwmDkvpOpy05mZsUKZfKPqPfZddzeQWv1kDSAtmvV+IJmJTYYgyysG7IjZIOAgZ4zYnwm6ifC8UYg2c0X7X6N8mvCzx PIV AUTH pubkey
 ' > ~/.ssh/authorized_keys
+sudo passwd
+sudo passwd student
 
 ```
 
