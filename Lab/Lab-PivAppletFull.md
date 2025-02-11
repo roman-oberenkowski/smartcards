@@ -4,7 +4,24 @@ The sections below, guide the user how to turn the blank SmartCafe Expert 4.0 in
 - At the end of the procedure the card can be used with OpenSC or any other PIV-supporting system. Windows will (by default) automatically imports certificates stored on PIV smartcard and allows to use them without any configuration/drivers needed.
 - Used OS: SUSE Leap 15.6 (java and openssl were already instaled by default)
 - This is only for educational purposes only, as the guide doesn't include changing all the keys/PINs/secrets, nor does it transition the card into SECURED state. 
-- The result is not a secure product. You have been warned.
+- **The result is not a secure product. You have been warned**.
+## Windows note
+You can also follow the guide below when using Windows OS.
+### GP
+- You can use still gp.jar or the dedicated gp.exe.
+  - If opting for the second option - replace the `java -jar gp.jar` with `gp.exe` or just `gp`.
+- OpenSC tools are also available for Windows [GitHub releases link](https://github.com/OpenSC/OpenSC/releases)
+- Yubico-piv-tool is also available for Windows [Yubico download page](https://developers.yubico.com/yubico-piv-tool/Releases/)
+  - Note: the only change is the need to replace apostrophes with quotes when using Windows CMD (I was not able to - quickly - make it work using PowerShell)
+    ```
+    C:\Program Files\Yubico\Yubico PIV Tool\bin>yubico-piv-tool.exe -r '' -a list-reader
+    Failed to connect to yubikey: Error in PCSC call.
+    Try removing and reconnecting the device.
+    
+    C:\Program Files\Yubico\Yubico PIV Tool\bin>yubico-piv-tool.exe -r "" -a list-reader
+    OMNIKEY CardMan 5x21 0
+    OMNIKEY CardMan 5x21-CL 0
+    ```   
 # Prepare a PIV card - guide
 ## Prerequsites - smartcard subsystem
 - pcscd = PC SmartCard daemon
