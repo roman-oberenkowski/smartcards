@@ -7,7 +7,6 @@ The sections below, guide the user how to turn the blank SmartCafe Expert 4.0 in
 - **The result is not a secure product. You have been warned**.
 ## Windows note
 You can also follow the guide below when using Windows OS.
-### GP
 - You can use still gp.jar or the dedicated gp.exe.
   - If opting for the second option - replace the `java -jar gp.jar` with `gp.exe` or just `gp`.
 - OpenSC tools are also available for Windows [GitHub releases link](https://github.com/OpenSC/OpenSC/releases)
