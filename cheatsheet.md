@@ -1,4 +1,16 @@
 # Cheatsheet
+## Fix PIV cards in lab
+Prints card status, certificates and shows remaining PIN tries:
+```
+yubico-piv-tool -r '' -a status
+"C:\Program Files\Yubico\Yubico PIV Tool\bin\yubico-piv-tool.exe" -r "" -a status
+```
+If `PIN tries left: 0` then
+```
+yubico-piv-tool -r '' -a unblock-pin -P 12345678 --new-pin 123456
+"C:\Program Files\Yubico\Yubico PIV Tool\bin\yubico-piv-tool.exe" -r "" -a unblock-pin -P 12345678 --new-pin 123456
+```
+
 ## Reinstall applets quickly
 ### GIDS
 ```
