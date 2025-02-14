@@ -1,0 +1,8 @@
+- https://developers.google.com/android/security/android-ready-se/supported-chipsets?ENABLE_SIGNIFICATIO=False#nxp
+- https://developers.google.com/android/security/android-ready-se
+- https://github.com/seek-for-android
+  - Very old (2015)
+  - "is for demonstration and test purposes only. Do not use in production environments!"
+  - few interesing smartcard uses under [Wiki->Applications](https://github.com/seek-for-android/pool/wiki/GoogleOtpAuthenticator)
+    - PCSC through bluetooth ("treat the Android phone like a normal smartcard reader"). Could be taken further - phone as bluetooth-connected smartcard.
+  - used a smartcard embedded into microSD card - [SecureFileManager](https://github.com/seek-for-android/pool/wiki/SecureFileManager)
