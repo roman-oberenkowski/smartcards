@@ -1,3 +1,8 @@
+- good introduction (old - Android ICS times)
+    - https://web.archive.org/web/20231121015946/https://nelenkov.blogspot.com/2012/08/android-secure-element-execution.html
+    - SE is just a smartcard integrated into the phone (usually in the NFC chip)
+    - to install applets on the SE you need the keys (like in normal smartcards)
+    - SE keys are not available to the end-user. You cannot install applets on your own
 - https://developers.google.com/android/security/android-ready-se/supported-chipsets?ENABLE_SIGNIFICATIO=False#nxp
 - https://developers.google.com/android/security/android-ready-se
 - https://github.com/seek-for-android
