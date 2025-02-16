@@ -1,4 +1,7 @@
-- Label: IDone Classic Card
+- ATR (Contact): 3B FB 96 00 00 81 31 FE 45 00 31 C0 64 77 E9 10 00 0F 90 00 E2
+- ATR (CL): 3B 8B 80 01 00 31 C0 64 77 E9 10 00 00 00 00 11
+- Dual-Interface card
+- Label: IDone Classic Card (T1)
 - Model: Cosmo64 RSA v5.4
 - Firmware/Applet: 0.0
 - Oberthur Technologies
